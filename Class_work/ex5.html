@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 5</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    .dir th {
+      width: 61px;
+      height: 61px;
+      background-color: darkorange;
+      border: none;
+    }
+    .chess {
+      position: absolute;
+      left: 71px;
+      top: 143px;
+    }
+    .chess td {
+      width: 60px;
+      height: 60px;
+    }
+    .chess tr:nth-child(odd) td:nth-child(even) {
+      background-color: black;
+    }
+    .chess tr:nth-child(even) td:nth-child(odd) {
+      background-color: black;
+    }
+    main {
+      width: 600px;
+      text-align: center;
+      margin: auto;
+      font-size: 18px;
+    }
+    main h2 {
+      background-color: lightskyblue;
+      margin: 0;
+    }
+    main table {
+      margin: auto;
+      background-color: lightgray;
+    }
+    .calendar th,
+    .calendar td {
+      width: 100px;
+      height: 45px;
+    }
+    main sub {
+      font-size: 10px;
+      margin-left: 3px;
+    }
+    .calendar tr td:last-child {
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>BÀN CỜ VUA</h1>
+    <table border="1" class="dir">
+      <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+      </tr>
+      <tr>
+        <th>A</th>
+      </tr>
+      <tr>
+        <th>B</th>
+      </tr>
+      <tr>
+        <th>C</th>
+      </tr>
+      <tr>
+        <th>D</th>
+      </tr>
+      <tr>
+        <th>E</th>
+      </tr>
+      <tr>
+        <th>F</th>
+      </tr>
+      <tr>
+        <th>G</th>
+      </tr>
+      <tr>
+        <th>H</th>
+      </tr>
+    </table>
+    <table border="1" class="chess">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <h1>TẠO LỊCH THÁNG 03/2023</h1>
+    <main>
+      <h2>Tháng 3 - March</h2>
+      <h2>2023</h2>
+      <table class="calendar">
+        <thead>
+          <tr>
+            <th>Thứ 2</th>
+            <th>Thứ 3</th>
+            <th>Thứ 4</th>
+            <th>Thứ 5</th>
+            <th>Thứ 6</th>
+            <th>Thứ 7</th>
+            <th bgcolor="red">Chủ Nhật</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>1<sub>11</sub></td>
+            <td>2<sub>12</sub></td>
+            <td>3<sub>12</sub></td>
+            <td>4<sub>13</sub></td>
+            <td>5<sub>14</sub></td>
+          </tr>
+          <tr>
+            <td>6<sub>15</sub></td>
+            <td>7<sub>16</sub></td>
+            <td>8<sub>17</sub></td>
+            <td>9<sub>18</sub></td>
+            <td>10<sub>19</sub></td>
+            <td>11<sub>20</sub></td>
+            <td>12<sub>21</sub></td>
+          </tr>
+          <tr>
+            <td>13<sub>22</sub></td>
+            <td>14<sub>23</sub></td>
+            <td>15<sub>24</sub></td>
+            <td>16<sub>25</sub></td>
+            <td>17<sub>26</sub></td>
+            <td>18<sub>27</sub></td>
+            <td>19<sub>28</sub></td>
+          </tr>
+          <tr>
+            <td>20<sub>29</sub></td>
+            <td>21<sub>30</sub></td>
+            <td>22 <sub>1/2</sub></td>
+            <td>23<sub>2</sub></td>
+            <td>24<sub>3</sub></td>
+            <td>25<sub>4</sub></td>
+            <td>26<sub>5</sub></td>
+          </tr>
+          <tr>
+            <td>27<sub>6</sub></td>
+            <td>28<sub>7</sub></td>
+            <td>29<sub>8</sub></td>
+            <td>30<sub>9</sub></td>
+            <td>31<sub>10</sub></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+      </table>
+    </main>
+  </body>
+</html>

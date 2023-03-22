@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành số 1</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      main {
+        width: 660px;
+        margin: auto;
+        border: 15px solid rgb(134, 206, 230);
+      }
+      form {
+        padding: 5px;
+      }
+      h3 {
+        background-color: orangered;
+        margin: 0;
+        padding: 2px;
+        text-align: center;
+      }
+      form div {
+        padding: 5px 30px;
+      }
+      label {
+        color: orange;
+      }
+      label[for="yourname"],
+      label[for="email"],
+      label[for="birthday"],
+      label[for="hobbies"] {
+        color: blue;
+      }
+      input {
+        box-shadow: 2px 2px 0px grey inset;
+        border: grey 1px solid;
+        border-radius: 0;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        box-shadow: -2px -2px 1px 1px grey inset;
+        border: none;
+        height: 30px;
+        width: 150px;
+      }
+      .email {
+        margin-left: 28px;
+      }
+
+      .email input,
+      .name input,
+      .birthday input,
+      .tel input {
+        height: 20px;
+      }
+      .hobby {
+        display: flex;
+      }
+      .hobby-detail {
+        padding: 0;
+      }
+      .hobby-detail > div {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 30px;
+      }
+      .hobby-detail > div > div {
+        width: 140px;
+        padding: 0;
+      }
+      .register {
+        width: 700px;
+        margin: auto;
+        background-color: blanchedalmond;
+      }
+      .register h3 {
+        background: lightgreen;
+      }
+      .gender input {
+        box-shadow: none;
+      }
+      .gender label[for] {
+        color: black;
+      }
+      .register label {
+        color: blue;
+      }
+      textarea {
+        margin-left: 77px;
+        box-shadow: 2px 2px 0px grey inset;
+        border: grey 1px solid;
+      }
+      .address {
+        position: relative;
+      }
+      .address label {
+        position: absolute;
+      }
+      .register .email {
+        margin-left: 0;
+      }
+      .register .email label {
+        margin-right: 30px;
+      }
+      .class select {
+        width: 175px;
+        height: 30px;
+        margin-left: 45px;
+        box-shadow: 2px 2px 0px 0px grey inset;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tạo form đơn giản</h1>
+    <main>
+      <form action="ex1.html" method="get">
+        <h3>SỞ THÍCH CỦA BẠN</h3>
+        <div>
+          <div class="name">
+            <label for="yourname">Họ và tên</label>
+            <input type="text" id="yourname" name="yourname" />
+          </div>
+          <div class="email">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="yourname" />
+          </div>
+          <div class="hobby">
+            <label for="hobbies">Sở thích</label>
+            <div class="hobby-detail">
+              <div>
+                <div>
+                  <input type="checkbox" id="sport" name="hobbies" />
+                  <label for="sport">Thể thao</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="music" name="hobbies" />
+                  <label for="music">Âm nhạc</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="read_book" name="hobbies" />
+                  <label for="read_book">Đọc sách</label>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <input type="checkbox" id="web" name="hobbies" />
+                  <label for="web">Lướt web</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="web" name="hobbies" />
+                  <label for="game">Chơi game</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="film" name="hobbies" />
+                  <label for="film">Điện ảnh</label>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <input type="checkbox" id="travel" name="hobbies" />
+                  <label for="travel">Du lịch</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input type="submit" value="Gửi thông tin" />
+          <input type="reset" value="Nhập lại" />
+        </div>
+      </form>
+    </main>
+    <h1>Form đăng ký học viên</h1>
+    <form action="ex1.html" method="get" class="register">
+      <h3>ĐĂNG KÝ HỌC VIÊN</h3>
+      <div>
+        <div class="name">
+          <label for="yourname">Họ và tên</label>
+          <input type="text" id="name" name="yourname" />
+        </div>
+        <div class="birthday">
+          <label for="birthday">Ngày sinh</label>
+          <input type="text" id="birthday" name="birthday" />
+        </div>
+        <div class="gender">
+          <label>Giới tính</label>
+          <input type="radio" id="male" name="gender" />
+          <label for="male">Nam</label>
+          <input type="radio" id="female" name="gender" />
+          <label for="female">Nữ</label>
+        </div>
+        <div class="address">
+          <label for="address">Địa chỉ</label>
+          <textarea name="address" id="address" cols="30" rows="5"></textarea>
+        </div>
+        <div class="class">
+          <label>Lớp</label>
+          <select name="class" id="class">
+            <option value="">-Chọn lớp-</option>
+            <option value="fulltime">Lớp Full-time</option>
+            <option value="parttime">Lớp Part-time</option>
+          </select>
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input type="text" name="yourname" />
+        </div>
+        <div class="tel">
+          <label for="tel">Điện thoại</label>
+          <input type="text" name="tel" />
+        </div>
+        <input type="submit" value="Gửi thông tin" />
+        <input type="reset" value="Nhập lại" />
+      </div>
+    </form>
+  </body>
+</html>
