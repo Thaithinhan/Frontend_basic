@@ -1,0 +1,11 @@
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+#p2 {
+  color: red;
+}
+#p3 {
+  background-color: blanchedalmond;
+  padding: 15px;
+}
