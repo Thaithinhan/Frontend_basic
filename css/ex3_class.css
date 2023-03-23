@@ -1,0 +1,147 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+main,
+header,
+#separate_sec,
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid grey;
+}
+header a img {
+  width: 100px;
+}
+header #list_menu_bar {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+#list_menu_bar .item_list_menu_bar a {
+  text-transform: uppercase;
+  padding: 0 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: black;
+  transition: 0.25s;
+}
+#list_menu_bar .item_list_menu_bar a:hover {
+  color: red;
+}
+#search {
+  margin-left: 0px;
+}
+#search input {
+  width: 300px;
+  height: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#search #btn_search {
+  position: relative;
+  background-color: red;
+  border: 0.5px solid red;
+  height: 35px;
+  width: 50px;
+  left: -55px;
+  top: 1px;
+  cursor: pointer;
+  font-size: 20px;
+}
+#separate_sec {
+  display: flex;
+  background-color: rgb(58, 57, 57);
+  padding: 0 15px;
+}
+#separate_sec a {
+  color: white;
+  margin-right: 10px;
+}
+#introduction {
+  display: flex;
+  padding: 5px 0px;
+  align-items: flex-start;
+  border-bottom: 5px ridge red;
+}
+#introduction img {
+  margin-right: 30px;
+}
+.intro {
+  color: red;
+}
+#chapter_list {
+  background-color: red;
+  padding: 5px;
+
+  color: white;
+}
+#start_read {
+  background-color: rgb(15, 237, 45);
+  padding: 5px;
+  color: white;
+}
+#detail_intro {
+  border-bottom: 5px ridge red;
+}
+
+/* CSS cho link mục lục */
+article {
+  max-width: 960px;
+  margin: 0 auto;
+}
+article p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+#dir_chapter {
+  text-align: center;
+  margin-top: 20px;
+}
+#dir_chapter a {
+  background-color: rgb(15, 237, 45);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+}
+#dir_chapter a i {
+  font-size: 25px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* Làm phân cột chapter */
+#chapter {
+  display: flex;
+}
+#chapter h4 {
+  color: red;
+}
+#chapter ul li a {
+  color: black;
+  transition: 0.2s;
+}
+#chapter ul li a:hover {
+  color: red;
+}
+footer {
+  background-color: #4a4a4a;
+  color: white;
+  text-align: justify;
+  padding: 15px;
+}
+footer p {
+  font-size: 13px;
+}
