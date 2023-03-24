@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #clock {
+        width: 300px;
+        margin: 0 auto;
+        height: 300px;
+        border-radius: 50%;
+        border: 10px solid chocolate;
+        background: bisque;
+        position: relative;
+      }
+      .center {
+        background-color: red;
+        position: absolute;
+        left: calc(50% - 6px);
+        top: calc(50% - 6px);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      ul li:nth-child(12) {
+        transform: translate(47%, -255px);
+      }
+      ul li:nth-child(6) {
+        transform: translate(48%, 165px);
+      }
+      ul li:nth-child(1) {
+        transform: translate(73%, 17px);
+      }
+      ul li:nth-child(7) {
+        transform: translate(25%, 120px);
+      }
+      ul li:nth-child(2) {
+        transform: translate(89%, 44px);
+      }
+      ul li:nth-child(8) {
+        transform: translate(8%, 47px);
+      }
+      ul li:nth-child(3) {
+        transform: translate(96%, 91px);
+      }
+      ul li:nth-child(9) {
+        transform: translate(0.5%, -45px);
+      }
+      ul li:nth-child(4) {
+        transform: translate(90%, 140px);
+      }
+      ul li:nth-child(10) {
+        transform: translate(7%, -135px);
+      }
+      ul li:nth-child(5) {
+        transform: translate(72%, 170px);
+      }
+      ul li:nth-child(11) {
+        transform: translate(24%, -213px);
+      }
+      /* .dir {
+        width: 4px;
+        height: 300px;
+        position: absolute;
+        background-color: blue;
+        left: calc(50% - 2px);
+        transform: rotate(150deg);
+      } */
+    </style>
+    <div id="clock">
+      <div class="hourHand"></div>
+      <div class="minuteHand"></div>
+      <div class="sechand"></div>
+      <div class="center"></div>
+      <div class="dir"></div>
+      <ul>
+        <li><span>1</span></li>
+        <li><span>2</span></li>
+        <li><span>3</span></li>
+        <li><span>4</span></li>
+        <li><span>5</span></li>
+        <li><span>6</span></li>
+        <li><span>7</span></li>
+        <li><span>8</span></li>
+        <li><span>9</span></li>
+        <li><span>10</span></li>
+        <li><span>11</span></li>
+        <li><span>12</span></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition</title>
+  </head>
+  <body>
+    <style>
+      #parent {
+        height: 100px;
+        background-color: #ccc;
+        position: relative;
+        text-align: justify;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      #child {
+        font-size: 30px;
+        position: absolute;
+        width: 100%;
+        color: #8ebf42;
+        font-weight: bold;
+        font-family: sans-serif;
+        animation: marquee 5s infinite linear;
+      }
+      @keyframes marquee {
+        from {
+          left: 0;
+        }
+        to {
+          left: 100%;
+        }
+      }
+    </style>
+    <div id="parent">
+      <p id="child">A scrolling text created with HTML Marquee element.</p>
+    </div>
+  </body>
+</html>

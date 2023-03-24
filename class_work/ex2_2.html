@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition</title>
+    <style>
+      #transition {
+        width: 100px;
+        height: 100px;
+        background: red;
+        /* transition: all 2s; */
+        animation: moving 2s infinite linear;
+      }
+      /* #transition:hover {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: green;
+        transform: translate(100px, 50px);
+      } */
+      @keyframes moving {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        25% {
+          transform: translate(0px, 100px);
+        }
+        50% {
+          transform: translate(100px, 100px);
+        }
+        75% {
+          transform: translate(100px, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="transition"></div>
+  </body>
+</html>
