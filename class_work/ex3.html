@@ -70,6 +70,8 @@
       ul li:nth-child(11) {
         transform: translate(24%, -213px);
       }
+      .sechand {
+      }
       /* .dir {
         width: 4px;
         height: 300px;
@@ -78,6 +80,38 @@
         left: calc(50% - 2px);
         transform: rotate(150deg);
       } */
+      .center::before {
+        content: ".";
+        width: 120px;
+        height: 4px;
+        background-color: black;
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 6px;
+        transform-origin: top left;
+        animation: secmove 60s infinite linear;
+      }
+      .center::after {
+        content: ".";
+        width: 100px;
+        height: 6px;
+        background-color: blue;
+        position: absolute;
+        top: calc(50% - 3px);
+        left: 5.5px;
+        transform-origin: top left;
+        animation: minmove 3600s infinite linear;
+      }
+      @keyframes secmove {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes minmove {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
     <div id="clock">
       <div class="hourHand"></div>
