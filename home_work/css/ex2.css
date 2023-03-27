@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.main_menu {
+  display: flex;
+}
+.main_menu li {
+  position: relative;
+  font-size: 20px;
+  width: 200px;
+  background-color: black;
+  transition: all 0.25s;
+  padding: 15px;
+  text-align: center;
+}
+.main_menu > li > a {
+  color: red;
+  padding: 15px;
+}
+.main_menu > li:hover {
+  background-color: red;
+}
+.main_menu > li:hover > a {
+  color: white;
+  text-align: center;
+}
+.main_menu > li:hover ul {
+  visibility: visible;
+}
+.sub_menu {
+  position: absolute;
+  left: 0px;
+  top: 53px;
+  visibility: hidden;
+  z-index: 30;
+  width: 100%;
+}
+.sub_menu li {
+  background-color: black;
+  padding: 10px 0;
+  width: 100%;
+}
+.sub_menu li a {
+  color: red;
+  transition: all 0.05s;
+}
+.sub_menu li:hover a {
+  color: chartreuse;
+}

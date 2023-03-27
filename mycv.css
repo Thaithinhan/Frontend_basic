@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* css khối left */
+.left header section {
+  margin-top: 20px;
+}
+.left header img {
+  width: 50%;
+  box-shadow: 10px 10px 10px 10px #4b4c13;
+}
+.left section.detail h3,
+.left section.contact_info h3,
+.right section.detail h3,
+.right section.contact_info h3 {
+  background-color: #f4ede5;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+}
+.left section.detail p,
+.right section.detail p {
+  text-align: justify;
+}
+.left section.detail.skill p {
+  margin-bottom: 0;
+}
+meter {
+  width: 100%;
+}
+meter::-webkit-meter-bar {
+  border: 0.5px solid #b8a367;
+} /*background color of bar*/
+meter::-webkit-meter-optimum-value {
+  background: #b8a367;
+}
+/* css khối bên phải */
+section.personal_info h1,
+section.personal_info h5 {
+  text-transform: uppercase;
+  color: #4b4b1c;
+  margin: 0px;
+}
+section.detail ul {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.academic_level ul li:nth-child(6) {
+  margin-top: 20px;
+}
+.work_exper ul li:nth-child(5) {
+  margin-top: 20px;
+}
+footer {
+  margin-top: 20px;
+  background: #d9d6cf;
+  padding: 15px;
+  font-family: "Dancing Script", cursive;
+  position: relative;
+}
+footer b {
+  position: absolute;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+  color: #b8a367;
+  top: -10px;
+  right: 0;
+  transform: rotate(3deg);
+}
+/* RESPONSIVE MOBILE-FIRST */
+@media screen and (min-width: 480px) {
+}
+/*Ipad dọc(768 x 1024)*/
+@media screen and (min-width: 575px) {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  header {
+    padding: 15px;
+  }
+  .info_detail {
+    display: flex;
+    justify-content: space-between;
+  }
+  .info_detail li {
+    margin: 10px 0;
+  }
+  .left {
+    flex-basis: calc(50% - 15px);
+    /* padding: 15px; */
+  }
+  .right {
+    flex-basis: calc(50%);
+    padding: 15px;
+    border-left: 1px solid #b8a367;
+  }
+
+  .left header section {
+    display: none;
+  }
+  .left header img {
+    width: 250px;
+    box-shadow: 10px 10px 10px 10px #4b4c13;
+  }
+  .left section.detail,
+  .right section.contact_info,
+  .right section.detail {
+    padding: 15px;
+    border-bottom: 0.5px solid #b8a367;
+  }
+  footer {
+    margin-top: 50px;
+    background: #d9d6cf;
+    padding: 30px;
+    font-family: "Dancing Script", cursive;
+    position: relative;
+  }
+  footer b {
+    position: absolute;
+    font-family: "Dancing Script", cursive;
+    font-size: 70px;
+    color: #b8a367;
+    top: -30px;
+    right: -0px;
+    transform: rotate(3deg);
+  }
+}
