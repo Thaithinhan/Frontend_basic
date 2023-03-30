@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quy đổi tiền tệ</title>
+  </head>
+  <body>
+    <style>
+      td {
+        padding: 5px 20px;
+        font-weight: 800;
+      }
+      select {
+        width: 100%;
+      }
+      #convert {
+        background-color: rgb(236, 154, 236);
+        border: 0.5px solid rgb(236, 154, 236);
+        padding: 5px 20px;
+        font-weight: 700;
+      }
+    </style>
+    <h2>Quy đổi tiền tệ</h2>
+    <form action="#" id="currency">
+      <table>
+        <tr>
+          <td><label for="amount">Amount</label></td>
+          <td><label for="from_cur">From Currency</label></td>
+          <td><label for="to_cur">From Currency</label></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="amount" /></td>
+          <td>
+            <select name="from_cur" id="from_cur">
+              <option value="0">VNĐ</option>
+              <option value="1">USD</option>
+            </select>
+          </td>
+          <td>
+            <select name="to_cur" id="to_cur">
+              <option value="2">USD</option>
+              <option value="3">VND</option>
+            </select>
+          </td>
+          <td><input type="submit" id="convert" value="Convert" /></td>
+        </tr>
+        <tr>
+          <td colspan="4" id="result"></td>
+        </tr>
+      </table>
+    </form>
+    <script src="js/ex2.js"></script>
+    <script src="https://unpkg.com/currency.js@~2.0.0/dist/currency.min.js"></script>
+  </body>
+</html>
