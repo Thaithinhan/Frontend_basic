@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - CONSOLE</title>
+  </head>
+  <body>
+    <h2>Console error()</h2>
+    <script>
+      console.error("You make a mistake");
+    </script>
+    <h2>Sử dụng console.warn</h2>
+    <script>
+      console.warn("You have a warning");
+    </script>
+    <h2>Clear Console</h2>
+    <button onclick="clear_console()">Clear console</button>
+    <script>
+      function clear_console() {
+        console.clear();
+      }
+    </script>
+    <h2>Console Time</h2>
+    <script>
+      console.time();
+      for (let i = 0; i < 10; i++) {
+        document.write(i);
+      }
+      console.timeEnd();
+    </script>
+    <script>
+      console.table(["Audi", "Volvo", "Ford"]);
+    </script>
+    <script>
+      console.log("Hello world!");
+      console.group("myLabel");
+      console.log("Hello again, this time inside a group, with a label!");
+      //  console.group();
+      console.log("Hello again, this time inside a group!");
+      console.groupEnd();
+    </script>
+  </body>
+</html>
