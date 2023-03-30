@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - NHÚNG MÃ JS</title>
+    <script src="app.js"></script>
+    <style>
+      #show_content {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="click_me">CLICK ME</button>
+    <div id="show_content"></div>
+    <script>
+      let btn = document.getElementById("click_me");
+      //  console.log(btn);
+      btn.onclick = function show_content() {
+        let div = document.getElementById("show_content");
+        //    console.log(div);
+        div.innerHTML = "Bạn đã click thành công";
+        div.style.backgroundColor = "greenyellow;";
+      };
+    </script>
+  </body>
+</html>
