@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DO YOU LOVE ME</title>
+  </head>
+  <body>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        width: 200px;
+      }
+      button {
+        padding: 10px 20px;
+      }
+    </style>
+    <h1>DO YOU LOVE ME <img src="images/trai-tim-lap-lanh.gif" alt="" /></h1>
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+    <!-- /Nhúng JS -->
+    <script>
+      let no = document.getElementById("no");
+      no.onmouseover = function move_no() {
+        no.style.position = "absolute";
+        no.style.left = Math.random() * window.innerWidth + "px";
+        no.style.top = Math.random() * window.innerHeight + "px";
+      };
+    </script>
+  </body>
+</html>

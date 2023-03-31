@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOÁN TỬ 3 NGÔI</title>
+  </head>
+  <body>
+    <style>
+      button {
+        padding: 10px 15px;
+      }
+    </style>
+    <button onclick="bai1()">Bài tập 1</button>
+    <button onclick="bai2()">Bài tập 2</button>
+    <button onclick="bai3()">Bài tập 3</button>
+
+    <!-- Nhúng file JS -->
+    <script>
+      function bai1() {
+        let a = +prompt("Nhập vào số a", 0);
+        let b = +prompt("Nhập vào số b", 0);
+        let result = a + b < 4 ? console.log("Below") : console.log("Over");
+      }
+      function bai2() {
+        let login = prompt("Nhập vào vị trí");
+        login == "Employee"
+          ? console.log(mess)
+          : login == "Director"
+          ? console.log("Greeting")
+          : login == ""
+          ? console.log("No login")
+          : console.log("");
+      }
+      function bai3() {}
+    </script>
+  </body>
+</html>

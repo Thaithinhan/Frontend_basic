@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUZZLE GAME</title>
+  </head>
+  <body>
+    <style>
+      .wrapper_puzzle {
+        width: 400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      img {
+        width: 100%;
+        transition: all 0.25s;
+      }
+      img:hover {
+        cursor: pointer;
+        border: 5px solid red;
+      }
+    </style>
+    <div class="wrapper_puzzle">
+      <img class="img" src="images/img-1.png" id="img_1" />
+      <img class="img" src="images/img-4.png" id="img_2" />
+      <img class="img" src="images/img-6.png" id="img_3" />
+      <img class="img" src="images/img-4.png" id="img_4" />
+    </div>
+    <!-- NHÚNG JS -->
+    <script>
+      let imgs = document.getElementsByClassName("img");
+      //  console.log(imgs);
+      let img1 = document.getElementById("img_1");
+      let img2 = document.getElementById("img_2");
+      let img3 = document.getElementById("img_3");
+      let img4 = document.getElementById("img_4");
+      let img_src = [
+        "images/img-1.png",
+        " images/img-2.png",
+        "images/img-3.png",
+        "images/img-4.png",
+        "images/img-5.png",
+        "images/img-6.png",
+        "images/img-8.png",
+        "images/img-9.png",
+      ];
+      for (let img of imgs) {
+        img.addEventListener("click", function random_img() {
+          let src_random = img_src[Math.floor(Math.random() * img_src.length)];
+          // console.log(src_random);
+          this.src = src_random;
+          alert(this.src);
+        });
+      }
+      if (
+        (img1.src == "images/img-1.png" &&
+          img2.src == "images/img-2.png" &&
+          img3.src == "images/img-3.png" &&
+          img4.src == "images/img-4.png ") ||
+        (img1.src == "images/img-8.png" &&
+          img2.src == "images/img-9.png" &&
+          img3.src == "images/img-5.png" &&
+          img4.src == "images/img-6.png ")
+      ) {
+        console.log(img1.src);
+      }
+    </script>
+  </body>
+</html>

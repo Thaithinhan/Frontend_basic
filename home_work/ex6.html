@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 6</title>
+  </head>
+  <body>
+    <style>
+      img {
+        width: 200px;
+      }
+    </style>
+    <form>
+      <img id="myImage" src="hinh-anh-qua-bong-vang-png-454.webp" />
+      <p>Click button below to move the image to right</p>
+      <input type="button" onclick="clickme()" value="Click Me" />
+    </form>
+    <script>
+      function clickme() {
+        let img = document.getElementById("myImage");
+        img.style.position = "relative";
+        img.style.left = "200px";
+        img.style.top = "100px";
+      }
+    </script>
+  </body>
+</html>
