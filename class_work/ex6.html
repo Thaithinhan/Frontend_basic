@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 6</title>
+  </head>
+  <body>
+    <style>
+      .wp_bar {
+        width: 300px;
+        padding: 5px 10px;
+        background-color: #efe4da;
+        border: 8px solid #147171;
+        border-radius: 150px;
+        margin-bottom: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ed6d44;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .rate_bar {
+        width: 100px;
+        height: 20px;
+        background: #ed6d44;
+        border-radius: 30px;
+        position: relative;
+      }
+      .rate_bar::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 5px solid #147171;
+        background-color: #26a99a;
+        position: absolute;
+        left: 0;
+        top: -10px;
+      }
+      .rate_bar:hover {
+        cursor: pointer;
+      }
+    </style>
+    <div class="wp_bar">
+      <p>GOOD</p>
+      <div class="rate_bar" id="good"></div>
+    </div>
+    <div class="wp_bar">
+      <p>FAST</p>
+      <div class="rate_bar" id="fast"></div>
+    </div>
+    <div class="wp_bar">
+      <p>CHEAP</p>
+      <div class="rate_bar" id="cheap"></div>
+    </div>
+    <!-- NHÚNG JS -->
+    <script>
+      let good = document.getElementById("good");
+      let fast = document.getElementById("fast");
+      let cheap = document.getElementById("cheap");
+      good.onclick = function move_bar() {};
+    </script>
+  </body>
+</html>

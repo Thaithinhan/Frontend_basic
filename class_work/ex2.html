@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWITCH CASE</title>
+  </head>
+  <body>
+    <style>
+      input,
+      button {
+        padding: 20px;
+      }
+      #show_result {
+        color: red;
+      }
+    </style>
+    <input type="text" id="month" />
+    <button id="cal_day">Tính số ngày</button>
+    <div id="show_result"></div>
+    <!-- Nhúng JS -->
+    <script>
+      let month = document.getElementById("month");
+      let show_result = document.getElementById("show_result");
+      let cal_day = document.getElementById("cal_day");
+      function check_day(month) {
+        switch (month) {
+          case "1":
+          case "3":
+          case "5":
+          case "7":
+          case "8":
+          case "10":
+          case "12":
+            show_result.innerHTML = "Tháng" + " " + month + " " + "có 31 ngày";
+            //   console.log(31);
+            break;
+          case "2":
+            show_result.innerHTML =
+              "Tháng" + " " + month + " " + "có 28 hoặc 29 ngày";
+            //   console.log(28);
+            break;
+          case "4":
+          case "6":
+          case "9":
+            show_result.innerHTML = "Tháng" + " " + month + " " + "có 30 ngày";
+            //   console.log(30);
+            break;
+        }
+      }
+      cal_day.onclick = function () {
+        check_day(month.value);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  let mark = +prompt("Nhập điểm của bạn");
+      //  switch (true) {
+      //    case mark >= 8:
+      //      console.log("Giỏi");
+      //      break;
+      //    case mark >= 7:
+      //      console.log("Khá");
+      //      break;
+      //    case mark >= 5:
+      //      console.log("Trung bình");
+      //      break;
+      //    case mark < 5:
+      //      console.log("Yếu");
+      //      break;
+      //  }
+      //  Tính tiền điện hộ gia đình
+      let number_electric = +prompt("Nhập số chữ điện");
+      switch (true) {
+        case number_electric >= 401:
+          console.log(
+            1500 * 50 +
+              1700 * 50 +
+              2000 * 100 +
+              2500 * 100 +
+              2800 * 100 +
+              (number_electric - 401 + 1) * 3000
+          );
+          break;
+        case number_electric >= 301:
+          console.log(
+            1500 * 50 +
+              1700 * 50 +
+              2000 * 100 +
+              2500 * 100 +
+              (number_electric - 301 + 1) * 2800
+          );
+          break;
+        case number_electric >= 201:
+          console.log(
+            1500 * 50 +
+              1700 * 50 +
+              2000 * 100 +
+              (number_electric - 201 + 1) * 2500
+          );
+          break;
+        case number_electric >= 101:
+          console.log(
+            1500 * 50 + 1700 * 50 + (number_electric - 101 + 1) * 2000
+          );
+          break;
+        case number_electric >= 51:
+          console.log(1500 * 50 + (number_electric - 51 + 1) * 1700);
+          break;
+        case number_electric < 51:
+          console.log(number_electric * 1500);
+          break;
+        default:
+          console.log("Nhập lại số điện");
+      }
+    </script>
+  </body>
+</html>
