@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP NÂNG CAO DOM JAVASCRIPT</title>
+  </head>
+  <body>
+    <style>
+      .wrapper {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #menu {
+        display: none;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        transition: all 0.1s;
+      }
+      #show_content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "h2 h2 h2" "img_show img_show img_show";
+        column-gap: 10px;
+        margin-top: 100px;
+      }
+      .title {
+        color: red;
+        grid-area: h2;
+      }
+      .img_show {
+        grid-area: img_show;
+      }
+    </style>
+    <div class="wrapper">
+      <button><img src="logo.jpg.crdownload" alt="" /></button>
+      <ul id="menu">
+        <li class="menu_item">
+          <h3>Điện thoại</h3>
+          <a href="#" id="phone"><img src="phone.png" alt="" /></a>
+        </li>
+        <li class="menu_item">
+          <h3>Laptop</h3>
+          <a href="#" id="laptop"><img src="laptop.png" alt="" /></a>
+        </li>
+        <li class="menu_item">
+          <h3>Tablet</h3>
+          <a href="#" id="tablet"><img src="tablet.png" alt="" /></a>
+        </li>
+      </ul>
+      <div id="show_content"></div>
+    </div>
+    <!-- NHÚNG MÃ SCRIPT -->
+    <script>
+      let button = document.querySelector("button");
+      let menu = document.getElementById("menu");
+      let phone = document.getElementById("phone");
+      let laptop = document.getElementById("laptop");
+      let tablet = document.getElementById("tablet");
+      let show_content = document.getElementById("show_content");
+      button.onclick = function () {
+        if (menu.style.display == "grid") {
+          menu.style.display = "none";
+          // show_content.style.display = "none";
+        } else {
+          menu.style.display = "grid";
+          // show_content.style.display = "grid";
+        }
+        show_content.innerHTML = "";
+      };
+      phone.onclick = function () {
+        let show_phone_content = `<h4 class="title">Hãng điện thoại</h4>
+                                   <img class"img_show" src="logo-iphone-220x48.png" alt="" />
+                                   <img class"img_show" src="samsungnew-220x48-1.png" alt="" />
+                                   <img class"img_show" src="logo-xiaomi-220x48-5.png" alt="" />`;
+        show_content.innerHTML = show_phone_content;
+      };
+      laptop.onclick = function () {
+        let show_laptop_content = `<h4 class="title">Hãng Laptop</h4>
+                                   <img class"img_show" src="logo-macbook-149x40.png" alt="" />
+                                   <img class"img_show" src="logo-asus-149x40.png" alt="" />
+                                   <img class"img_show" src="logo-dell-149x40.png" alt="" />`;
+        show_content.innerHTML = show_laptop_content;
+      };
+      tablet.onclick = function () {
+        let show_tablet_content = `<h4 class="title">Hãng tablet</h4>
+                                   <img class"img_show" src="iPad-(Apple)522-b_4.jpg" alt="" />
+                                   <img class"img_show" src="samsungnew-220x48-1.png" alt="" />
+                                   <img class"img_show" src="Lenovo522-b_6.jpg" alt="" />`;
+        show_content.innerHTML = show_tablet_content;
+      };
+    </script>
+  </body>
+</html>

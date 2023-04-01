@@ -9,13 +9,13 @@
   <body>
     <style>
       .wp_bar {
-        width: 300px;
+        width: 200px;
         padding: 5px 10px;
         background-color: #efe4da;
         border: 8px solid #147171;
         border-radius: 150px;
         margin-bottom: 20px;
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1.5em;
         font-weight: bold;
         color: #ed6d44;
@@ -24,14 +24,14 @@
         align-items: center;
       }
       .rate_bar {
-        width: 100px;
+        width: 70px;
         height: 20px;
-        background: #ed6d44;
+        background-color: #ab2e00;
         border-radius: 30px;
         position: relative;
+        transition: all 0.25s;
       }
-      .rate_bar::before {
-        content: "";
+      .circle {
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -40,29 +40,117 @@
         position: absolute;
         left: 0;
         top: -10px;
+        transition: all 0.1s;
       }
       .rate_bar:hover {
         cursor: pointer;
       }
+      .rate_bar_click {
+        background-color: #147171;
+      }
+      .circle_click {
+        left: 30px;
+        transition: all 0.1s;
+      }
+      #show {
+        background-color: #ab2e00;
+      }
     </style>
     <div class="wp_bar">
       <p>GOOD</p>
-      <div class="rate_bar" id="good"></div>
+      <div class="rate_bar" id="good">
+        <div class="circle"></div>
+      </div>
     </div>
     <div class="wp_bar">
       <p>FAST</p>
-      <div class="rate_bar" id="fast"></div>
+      <div class="rate_bar" id="fast">
+        <div class="circle"></div>
+      </div>
     </div>
     <div class="wp_bar">
       <p>CHEAP</p>
-      <div class="rate_bar" id="cheap"></div>
+      <div class="rate_bar" id="cheap">
+        <div class="circle"></div>
+      </div>
     </div>
     <!-- NHÚNG JS -->
     <script>
-      let good = document.getElementById("good");
-      let fast = document.getElementById("fast");
-      let cheap = document.getElementById("cheap");
-      good.onclick = function move_bar() {};
+      let good_vote = document.getElementById("good"); //Truy cập tới good_vote
+      let good_vote_circle = good_vote.querySelector(".circle"); // Truy cập tới hình tròn
+      // console.log(good_vote_circle);
+      let fast_vote = document.getElementById("fast");
+      let fast_vote_circle = fast_vote.querySelector(".circle"); // Truy cập tới hình tròn
+      let cheap_vote = document.getElementById("cheap");
+      let cheap_vote_circle = cheap_vote.querySelector(".circle"); // Truy cập tới hình tròn
+      // let show = document.getElementById("show");
+      // console.log(rate_bar);
+      // DÙNG VÒNG LẶP FOR
+      // for (let bar of rate_bar) {
+      //   bar.addEventListener("click", function change_move() {
+      //     this.classList.toggle("rate_bar_click");
+      //     let circle = this.querySelector("div");
+      //     circle.classList.toggle("circle_click");
+      //     // console.log(this.className);
+      //   });
+      // }
+      good_vote.addEventListener("click", function good() {
+        if (good_vote.classList.contains("rate_bar_click")) {
+          good_vote.classList.remove("rate_bar_click");
+          good_vote_circle.classList.remove("circle_click");
+        } else {
+          if (
+            fast_vote.classList.contains("rate_bar_click") &&
+            cheap_vote.classList.contains("rate_bar_click")
+          ) {
+            good_vote.classList.add("rate_bar_click");
+            good_vote_circle.classList.add("circle_click");
+            cheap_vote.classList.remove("rate_bar_click");
+            cheap_vote_circle.classList.remove("circle_click");
+          } else {
+            good_vote.classList.add("rate_bar_click");
+            good_vote_circle.classList.add("circle_click");
+          }
+        }
+      });
+      fast_vote.addEventListener("click", function fast() {
+        if (fast_vote.classList.contains("rate_bar_click")) {
+          fast_vote.classList.remove("rate_bar_click");
+          fast_vote_circle.classList.remove("circle_click");
+        } else {
+          if (
+            good_vote.classList.contains("rate_bar_click") &&
+            cheap_vote.classList.contains("rate_bar_click")
+          ) {
+            fast_vote.classList.add("rate_bar_click");
+            fast_vote_circle.classList.add("circle_click");
+            good_vote.classList.remove("rate_bar_click");
+            good_vote_circle.classList.remove("circle_click");
+          } else {
+            fast_vote.classList.add("rate_bar_click");
+            fast_vote_circle.classList.add("circle_click");
+          }
+        }
+      });
+      cheap_vote.addEventListener("click", function chep() {
+        if (cheap_vote.classList.contains("rate_bar_click")) {
+          cheap_vote.classList.remove("rate_bar_click");
+          cheap_vote_circle.classList.remove("circle_click");
+        } else {
+          if (
+            good_vote.classList.contains("rate_bar_click") &&
+            fast_vote.classList.contains("rate_bar_click")
+          ) {
+            cheap_vote.classList.add("rate_bar_click");
+            cheap_vote_circle.classList.add("circle_click");
+            fast_vote.classList.remove("rate_bar_click");
+            fast_vote_circle.classList.remove("circle_click");
+          } else {
+            cheap_vote.classList.add("rate_bar_click");
+            cheap_vote_circle.classList.add("circle_click");
+          }
+        }
+      });
     </script>
   </body>
 </html>

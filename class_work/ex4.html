@@ -32,7 +32,7 @@
     <!-- NHÚNG JS -->
     <script>
       let imgs = document.getElementsByClassName("img");
-      //  console.log(imgs);
+      let wrapper_puzzle = document.getElementsByClassName("wrapper_puzzle");
       let img1 = document.getElementById("img_1");
       let img2 = document.getElementById("img_2");
       let img3 = document.getElementById("img_3");
@@ -53,20 +53,25 @@
           // console.log(src_random);
           this.src = src_random;
           // alert(this.src);
+          console.log(wrapper_puzzle);
         });
-      }
-      if (
-        (img1.src == "images/img-1.png" &&
+        if (
+          img1.src == "images/img-1.png" &&
           img2.src == "images/img-2.png" &&
           img3.src == "images/img-3.png" &&
-          img4.src == "images/img-4.png ") ||
-        (img1.src == "images/img-8.png" &&
-          img2.src == "images/img-9.png" &&
-          img3.src == "images/img-5.png" &&
-          img4.src == "images/img-6.png ")
-      ) {
-        // console.log(img1.src);
+          img4.src == "images/img-4.png "
+        ) {
+          wrapper_puzzle[0].style.border = "1px solid black";
+        }
       }
+      // if (
+      //   img1.src == "images/img-1.png" &&
+      //   img2.src == "images/img-2.png" &&
+      //   img3.src == "images/img-3.png" &&
+      //   img4.src == "images/img-4.png "
+      // ) {
+      //   wrapper_puzzle.style.border = "1px solid black";
+      // }
     </script>
   </body>
 </html>
