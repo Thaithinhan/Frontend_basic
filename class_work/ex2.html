@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 2</title>
+  </head>
+  <body>
+    <style>
+      button {
+        padding: 10px 30px;
+        background-color: lightblue;
+        border: 0.5px solid coral;
+        font-weight: bold;
+      }
+      div {
+        margin: 20px 0;
+      }
+    </style>
+    <button id="ex1" onclick="bai1()">Bài 1</button>
+    <div id="show_bai1"></div>
+    <button id="ex2" onclick="bai2()">Bài 2</button>
+    <div id="show_bai2"></div>
+    <button id="ex3" onclick="bai3()">Bài 3</button>
+    <div id="show_bai3"></div>
+    <button id="ex4" onclick="bai4()">Bài 4</button>
+    <div id="show_bai4"></div>
+    <button id="ex5" onclick="bai5()">Bài 5</button>
+    <div id="show_bai5"></div>
+    <button id="ex6" onclick="bai6()">Bài 6</button>
+    <div id="show_bai6"></div>
+    <button id="ex7" onclick="bai7()">Bài 7</button>
+    <div id="show_bai7"></div>
+    <button id="ex8" onclick="bai8()">Bài 8</button>
+    <div id="show_bai8"></div>
+    <button id="ex9" onclick="bai9()">Bài 9</button>
+    <div id="show_bai9"></div>
+    <button id="ex10" onclick="bai10()">Bài 10</button>
+    <div id="show_bai10"></div>
+    <button id="ex11" onclick="bai11()">Bài 11</button>
+    <div id="show_bai11"></div>
+    <button id="ex12" onclick="bai12()">Bài 12</button>
+    <div id="show_bai12"></div>
+    <!-- NHÚNG JS -->
+    <script>
+      // Chuyển từ C sang F
+      function bai1() {
+        let show_bai1 = document.getElementById("show_bai1");
+        let C = +prompt("Nhập độ C");
+        let F = (C * 9) / 5 + 32;
+        show_bai1.innerHTML = "Nhiệt độ F là : " + F;
+      }
+      // Chuyển từ met sang feet
+      function bai2() {
+        let show_bai2 = document.getElementById("show_bai2");
+        let met = +prompt("Nhập mét");
+        let ft = met * 3.2808;
+        show_bai2.innerHTML = "Số feet được đổi sang là : " + ft;
+      }
+      //Tính diện tích hình vuông
+      function bai3() {
+        let show_bai3 = document.getElementById("show_bai3");
+        let a = +prompt("Nhập chiều dài cạnh hình vuông");
+        let s = a * a;
+        show_bai3.innerHTML = "Diện tích hình vuông là : " + s;
+      }
+      //Tính diện tích hình chữ nhật
+      function bai4() {
+        let show_bai4 = document.getElementById("show_bai4");
+        let a = +prompt("Nhập chiều dài hình chữ nhật");
+        let b = +prompt("Nhập chiều rộng hình chữ nhật");
+        let s = a * b;
+        show_bai4.innerHTML = "Diện tích hình chữ nhật là : " + s;
+      }
+      //Tính diện tích tam giác vuông
+      function bai5() {
+        let show_bai5 = document.getElementById("show_bai5");
+        let a = +prompt("Nhập chiều dài cạnh góc vuông 1");
+        let b = +prompt("Nhập chiều dài cạnh góc vuông 2");
+        let s = (a * b) / 2;
+        show_bai5.innerHTML = "Diện tích hình tam giác vuông : " + s;
+      }
+      //Giải phương trình bậc 1
+      function bai6() {
+        let show_bai6 = document.getElementById("show_bai6");
+        let a = +prompt("Nhập hệ số a");
+        let b = +prompt("Nhập hệ số b");
+        if (a == 0) {
+          if (b != 0) {
+            show_bai6.innerHTML = "Phương trình vô nghiệm";
+          } else {
+            show_bai6.innerHTML = "Phương trình vô số nghiệm";
+          }
+        } else {
+          let x = -b / a;
+          show_bai6.innerHTML = "Phương trình có nghiệm x là: " + x;
+        }
+      }
+      //Giả phương trình bậc 2
+      function bai7() {
+        let show_bai7 = document.getElementById("show_bai7");
+        let a = +prompt("Nhập hệ số a");
+        let b = +prompt("Nhập hệ số b");
+        let c = +prompt("Nhập hệ số c");
+        if (a != 0) {
+          let delta = b * b - 4 * a * c;
+          if (delta < 0) {
+            show_bai7.innerHTML = "Phương trình vô nghiệm";
+          } else {
+            if (delta == 0) {
+              let x = -b / (2 * a);
+              show_bai7.innerHTML = "Phương trình có nghiệm kép là: " + x;
+            } else {
+              let x1 = (-b - Math.sqrt(delta)) / (2 * a);
+              let x2 = (-b + Math.sqrt(delta)) / (2 * a);
+              show_bai7.innerHTML =
+                "Phương trình có 2 nghiệm phân biệt là: " +
+                x1 +
+                "và" +
+                " " +
+                x2;
+            }
+          }
+          return false;
+        }
+      }
+      //Kiểm tra xem số tuổi nhập vao của một người
+      function bai8() {
+        let show_bai8 = document.getElementById("show_bai8");
+        let age = +prompt("Nhập vào số tuổi của bạn");
+        switch (true) {
+          case age <= 0:
+            show_bai8.innerHTML = "Số tuổi phải lớn hơn 0";
+            break;
+          case age > 120:
+            show_bai8.innerHTML = "Số tuổi bạn quá cao không phù hợp";
+            break;
+          case 0 < age <= 120:
+            show_bai8.innerHTML =
+              "Số tuổi của bạn là phù hợp với độ tuổi con người";
+            break;
+        }
+      }
+      // Kiểm tra xem độ dài của 3 cạnh tam giác
+      function bai9() {
+        let show_bai9 = document.getElementById("show_bai9");
+        let a = +prompt("Nhập hệ chiều dài cạnh a");
+        let b = +prompt("Nhập chiều dài cạnh b");
+        let c = +prompt("Nhập chiều dài cạnh c");
+        if (a <= 0 || b <= 0 || c <= 0) {
+          show_bai9.innerHTML = "Không phải là cạnh của một tam giác";
+        } else {
+          if (a + b > c && a + c > b && c + b > a) {
+            show_bai9.innerHTML = "A,B,C là cạnh của một tam giác";
+          } else {
+            show_bai9.innerHTML = "A,B,C không là cạnh của một tam giác";
+          }
+        }
+      }
+      //Tính giá điện
+      // Viết chương trình tính thuế thu nhập cá nhân theo tháng
+      function bai11() {
+        let show_bai11 = document.getElementById("show_bai11");
+        let gross_salary = +prompt("Nhập số tiền lương của bạn");
+        const giam_tru_ban_than = 11000000;
+        const so_nguoi_phu_thuoc = +prompt("Nhập số người phụ thuộc");
+        const total_giam_tru = giam_tru_ban_than + so_nguoi_phu_thuoc * 4400000;
+        const tien_bao_hiem_duoc_tru = +prompt("Nhập số tiền bảo hiểm");
+        const deduct = total_giam_tru + tien_bao_hiem_duoc_tru;
+        const thu_nhap_tinh_thue = gross_salary - deduct;
+        let pit;
+        if (
+          gross_salary < 0 ||
+          so_nguoi_phu_thuoc < 0 ||
+          tien_bao_hiem_duoc_tru < 0
+        ) {
+          show_bai11.innerHTML = "Các số nhập không được nhỏ hơn 0";
+        } else {
+          switch (true) {
+            case 80000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.35 - 9850000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 52000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.3 - 5850000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 32000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.25 - 3250000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 18000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.2 - 1650000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 10000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.15 - 750000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 5000000 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.1 - 250000;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case 0 < thu_nhap_tinh_thue:
+              pit = thu_nhap_tinh_thue * 0.05;
+              show_bai11.innerHTML = "Thuế TNCN phải nộp là: " + pit;
+              break;
+            case thu_nhap_tinh_thue <= 0:
+              show_bai11.innerHTML = "Không phải nộp thuế TNCN";
+              break;
+          }
+        }
+      }
+      //Viết chương trìn tính lãi (Lãi mẹ đẻ lãi con)
+      function bai12() {
+        let show_bai12 = document.getElementById("show_bai12");
+        const goc_dau = +prompt("Nhập số tiền vay ban đầu");
+        const month = +prompt("Nhập số tháng cho vay");
+        const lai_suat_thang = +prompt("Nhập lãi suất 01 tháng(%)");
+        //Tháng thứ nhất  : goc_dau*1.month
+        //Tháng thứ 2 sẽ trả (goc_dau+goc_dau*month)+(goc_dau+goc_dau*month).month
+        //=> (goc_dau+goc_dau*month)*1.month=> goc_dau*1.month*1.month
+        //=> Tương tự cho các tháng tiếp theo đến tháng n
+        const lai_suat = Math.pow(1 + lai_suat_thang / 100, month); // Có thể dùng vòng lặp
+        const total_tien_tra = goc_dau * lai_suat;
+        show_bai12.innerHTML =
+          "Số tiền gốc và lãi phải trả là: " + total_tien_tra;
+        //Dùng vòng lặp tính số lãi
+        let interest = 1;
+        let lai = 1 + lai_suat_thang / 100;
+        for (let i = 0; i < month; i++) {
+          interest *= lai;
+          console.log(interest);
+        }
+      }
+    </script>
+  </body>
+</html>

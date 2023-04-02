@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 1</title>
+  </head>
+  <body>
+    <style>
+      button {
+        padding: 10px 30px;
+        background-color: lightblue;
+        border: 0.5px solid coral;
+        font-weight: bold;
+      }
+      div {
+        margin: 20px 0;
+      }
+    </style>
+    <button id="ex1" onclick="bai1()">Bài 1</button>
+    <div id="show_bai1"></div>
+    <button id="ex2" onclick="bai2()">Bài 2</button>
+    <div id="show_bai2"></div>
+    <button id="ex3" onclick="bai3()">Bài 3</button>
+    <div id="show_bai3"></div>
+    <button id="ex4" onclick="bai4()">
+      Bài 4: Tìm số lớn nhất 3 số nguyên
+    </button>
+    <div id="show_bai4"></div>
+    <button id="ex5" onclick="bai5()">Bài 5: Xếp loại học lực</button>
+    <div id="show_bai5"></div>
+    <button id="ex6" onclick="bai6()">Bài 6: Tính hoa hồng bán hàng</button>
+    <div id="show_bai6"></div>
+    <button id="ex7" onclick="bai7()">
+      Bài 7: Tính tiền cước điện thoại hộ gia đình
+    </button>
+    <div id="show_bai7"></div>
+    <!-- NHÚNG JS -->
+    <script>
+      function bai1() {
+        let a = +prompt("Nhập số a");
+        let b = +prompt("Nhập số b");
+        let show_1 = document.getElementById("show_bai1");
+        if (a % b == 0) {
+          show_1.innerHTML = `${a} chia hết cho ${b}`;
+        }
+        show_1.innerHTML = `${a} không chia hết cho ${b}`;
+      }
+      function bai2() {
+        let age = +prompt("Nhập số tuổi");
+        let show_2 = document.getElementById("show_bai2");
+        if (age < 15) {
+          show_2.innerHTML = "Không đủ điều kiện học lớp 10";
+          return;
+        }
+        show_2.innerHTML = "Đủ điều kiện học lớp 10";
+      }
+      function bai3() {
+        let num = parseInt(prompt("Nhập số nguyên bất kỳ"));
+        let show_3 = document.getElementById("show_bai3");
+        if (num < 0) {
+          show_3.innerHTML = num + " " + "Bé hơn 0";
+        }
+        if (num > 0) {
+          show_3.innerHTML = num + " " + "Lớn hơn 0";
+        }
+      }
+      function bai4() {
+        let num1 = parseInt(prompt("Nhập 1 số nguyên bất kỳ"));
+        let num2 = parseInt(prompt("Nhập 1 số nguyên bất kỳ"));
+        let num3 = parseInt(prompt("Nhập 1 số nguyên bất kỳ"));
+        let show_4 = document.getElementById("show_bai4");
+        if (num1 > num2 && num1 > num3) {
+          show_4.innerHTML = num1 + " " + "là số lớn nhất";
+        } else {
+          if (num2 > num3) {
+            show_4.innerHTML = num2 + " " + "là số lớn nhất";
+          } else {
+            show_4.innerHTML = num3 + " " + "là số lớn nhất";
+          }
+        }
+      }
+      function bai5() {
+        let num1 = parseInt(prompt("Nhập điểm bài kiểm tra"));
+        let num2 = parseInt(prompt("Nhập điểm bài thi giữa kỳ"));
+        let num3 = parseInt(prompt("Nhập điểm bài thi cuối kỳ"));
+        let avg_mark = (num1 + num2 + num3) / 3;
+        let show_5 = document.getElementById("show_bai5");
+        if (num1 < 0 || num2 < 0 || num3 < 0) {
+          show_5.innerHTML = "Điểm phải lớn hơn 0";
+          return false;
+        }
+        if (avg_mark >= 0) {
+          if (avg_mark >= 8) {
+            show_5.innerHTML = "Xếp loại GIỎI";
+          }
+          if (avg_mark >= 6.5) {
+            show_5.innerHTML = "Xếp loại Khá";
+          }
+          if (avg_mark >= 5) {
+            show_5.innerHTML = "Xếp loại Trung Bình";
+          }
+          if (avg_mark < 5) {
+            show_5.innerHTML = "THI LẠI";
+          }
+        } else {
+          show_5.innerHTML = "Điểm phải lớn hơn 0";
+        }
+      }
+      function bai6() {
+        let num1 = parseInt(prompt("Nhập số tiền bán hàng trong tháng"));
+
+        let show_6 = document.getElementById("show_bai6");
+        if (num1 < 0) {
+          show_6.innerHTML = "Doanh thu phải lớn hơn 0";
+          return false;
+        }
+        if (num1 < 100000000) {
+          show_6.innerHTML = "Doanh số chưa đạt";
+        }
+        if (num1 >= 100000000) {
+          let commission = num1 * 0.05;
+          show_6.innerHTML = "Số tiền hoa hồng được hưởng là: " + commission;
+        }
+        if (num1 >= 200000000) {
+          let commission = num1 * 0.07;
+          show_6.innerHTML = "Số tiền hoa hồng được hưởng là: " + commission;
+        }
+        if (num1 >= 300000000) {
+          let commission = num1 * 0.1;
+          show_6.innerHTML = "Số tiền hoa hồng được hưởng là: " + commission;
+        }
+      }
+      function bai7() {
+        let min = +prompt("Nhập số phút", 0);
+        const fixed_fee = 25000;
+        const range1 = 600 * 50;
+        const range2 = range1 + 400 * 200;
+        const range3 = range2 + (min - 200) * 200;
+        let total_money;
+        let show_7 = document.getElementById("show_bai7");
+        if (min > 200) {
+          total_money = fixed_fee + range3;
+          show_7.innerHTML = "Tiền cước điện thoại là " + total_money;
+        }
+        if (min > 50) {
+          total_money = fixed_fee + range1 + 400 * (min - 50);
+          show_7.innerHTML = "Tiền cước điện thoại là " + total_money;
+        }
+        if (0 <= min <= 50) {
+          total_money = fixed_fee + min * 600;
+          show_7.innerHTML = "Tiền cước điện thoại là " + total_money;
+        }
+      }
+    </script>
+  </body>
+</html>
