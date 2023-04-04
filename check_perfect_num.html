@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECK SỐ HOÀN HẢO</title>
+  </head>
+  <body>
+    <input type="number" id="input_number" />
+    <button onclick="check_perfect_num()">Tìm ước</button>
+    <div id="result"></div>
+    <!-- NHÚNG SCRIPT -->
+    <script>
+      let result = document.getElementById("result");
+      let input_number = document.getElementById("input_number");
+      function check_perfect_num() {
+        let total = 0;
+        let num = Number(input_number.value);
+        for (let i = 1; i < num; i++) {
+          if (num % i == 0) {
+            total += i;
+          }
+        }
+        if (total == num) {
+          console.log("Số hoàn hảo");
+        } else {
+          console.log("Không");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BẢNG CỬU CHƯƠNG</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #wrapper {
+        display: flex;
+        justify-content: center;
+        max-width: 600px;
+        flex-wrap: wrap;
+        margin: auto;
+        gap: 5px;
+      }
+      table {
+        width: 18%;
+        border: 5px solid orange;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+    <h2>BẢNG CỬU CHƯƠNG</h2>
+    <div id="wrapper"></div>
+    <!-- Nhúng JS -->
+    <script>
+      let wrapper = document.getElementById("wrapper");
+
+      for (let i = 2; i <= 10; i++) {
+        let table = "<table border='0'  >";
+
+        for (let j = 2; j <= 10; j++) {
+          table = table + "<tr>";
+          table = table + "<td>" + "" + i + " x " + j + " = " + i * j + "</td>";
+          // document.write("" + i + " x " + j + " =  " + i * j + "<br>");
+          table = table + "</tr>";
+        }
+
+        table = table + "</table>";
+        wrapper.innerHTML += table;
+      }
+    </script>
+  </body>
+</html>

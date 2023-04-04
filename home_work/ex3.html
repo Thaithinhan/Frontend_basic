@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 3</title>
+  </head>
+  <body>
+    <style>
+      div {
+        margin: 20px 0;
+      }
+    </style>
+    <button onclick="bai1()">Bài tập 1</button>
+    <div id="bai1"></div>
+    <button onclick="bai2()">Bài tập 2</button>
+    <div id="bai2"></div>
+    <!-- NHÚNG JS -->
+    <script>
+      let bai_1 = document.getElementById("bai1");
+      console.log(bai_1);
+      let bai_2 = document.getElementById("bai2");
+      function bai1() {
+        let total = 0;
+        let num = +prompt("Enter a number: ");
+        while (num != -1) {
+          // alert(num);
+          //phần code tính tổng
+          total += num;
+          // console.log(total);
+          num--;
+        }
+        bai_1.innerHTML = "Total:" + total;
+      }
+      function bai2() {
+        let i = 1;
+        while (i <= 100) {
+          // let hr = `<hr width= '${i * 10}px' >`;
+          let hr = "<hr width=" + i * 10 + "px>";
+          bai_2.innerHTML += hr;
+          i++;
+        }
+      }
+    </script>
+  </body>
+</html>

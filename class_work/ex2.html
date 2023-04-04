@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 2</title>
+  </head>
+  <body>
+    <div id="wrapper"></div>
+    <!-- NHÚNG JS -->
+    <script>
+      let wrapper = document.getElementById("wrapper");
+      let number = +prompt("Nhập số number của bạn");
+      let count = 0;
+      let N = 2;
+      wrapper.innerHTML += number + " " + "số nguyên tố đầu tiên là: ";
+      // for (let j = 1; j < number; j++) {
+      //   if (check_prime(N)) {
+      //     console.log(N);
+      //     wrapper.innerHTML += "<b>" + N + " " + "</b>";
+      //   }
+      //   N++;
+      // }
+
+      for (count; count < number; ) {
+        if (check_prime(N)) {
+          console.log(N);
+          wrapper.innerHTML += "<b>" + N + " " + "</b>";
+          count++;
+        }
+        N++;
+      }
+      function check_prime(number) {
+        let isPrime = true;
+        if (number >= 2) {
+          for (let i = 2; i <= number - 1; i++) {
+            if (number % i == 0) {
+              isPrime = false;
+              break;
+            } else {
+              isPrime = true;
+            }
+          }
+        } else {
+          isPrime = false;
+        }
+        if (isPrime === true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // console.log(check_prime(number));
+    </script>
+  </body>
+</html>
