@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 1</title>
+  </head>
+  <body>
+    <style>
+      button {
+        padding: 10px 15px;
+        margin: 10px 0;
+      }
+      .div_img {
+        width: 200px;
+      }
+      .div_img img {
+        width: 100%;
+        transition: all 0.25s;
+        z-index: 99;
+      }
+      .wrapper {
+        position: relative;
+      }
+      .rotate {
+        transform: rotate(360deg);
+      }
+    </style>
+    <button onclick="(bai1())">BÀI 1</button>
+    <button onclick="(bai2())">BÀI 2</button>
+    <button onclick="(bai3())">BÀI 3</button> <br />
+    <input type="number" id="input_number4" />
+    <button onclick="(bai4())">BÀI 4</button> <br />
+    <div id="result4"></div>
+    <input type="number" id="input_number5" />
+    <button onclick="(bai5())">BÀI 5</button> <br />
+    <div id="result5"></div>
+    <input type="number" id="input_number" />
+    <button onclick="(bai6())">BÀI 6</button>
+    <div id="result"></div>
+    <input type="number" id="input_number7" />
+    <button onclick="(bai7())">BÀI 7</button> <br />
+    <div id="result7"></div>
+    <br /><br />
+    <div class="wrapper">
+      <button id="button">PLAY</button>
+      <div class="div_img">
+        <img src="images/xucxich.jpg" alt="xucxich" id="desc_img" />
+      </div>
+      <div id="result8"></div>
+    </div>
+
+    <!-- NHÚNG JS -->
+    <script>
+      function bai1() {
+        for (let i = 1; i <= 100; i++) {
+          console.log(i);
+          if (i == 99) {
+            console.log("Finish");
+            break;
+          }
+        }
+      }
+      function bai2() {
+        do {
+          let deg = +prompt("Nhập nhiệt độ cua bạn");
+          if (deg < 20) {
+            console.log("Nhập nhiệt độ cao lên");
+          } else if (deg > 100) {
+            console.log("Nhập nhiệt độ thấp");
+          } else {
+            console.log("Nhập nhiệt vừa phải");
+          }
+        } while (20 > deg || deg > 100);
+      }
+      function bai3() {
+        let num = +prompt("Nhập số lượng số cần xuất");
+        let a = 1; //Số sau
+        let b = 0; //Số trước
+        let fob; //Lưu trữ số fob để in ra
+        while (num >= 0) {
+          fob = a;
+          a = a + b;
+          b = fob;
+          num--;
+          console.log(fob);
+          document.write(fob + "<br>");
+        }
+      }
+      function bai4() {
+        let input_number4 = document.getElementById("input_number4");
+        let result4 = document.getElementById("result4");
+        let a = 1;
+        let b = 0;
+        let fibo;
+        for (let i = 0; i < input_number4.value; i++) {
+          fibo = a;
+          a = b + fibo;
+          b = fibo;
+          if (fibo % 5 == 0) {
+            result4.innerHTML = fibo;
+            break;
+          }
+        }
+      }
+      function bai5() {
+        let input_number5 = document.getElementById("input_number5");
+        let result5 = document.getElementById("result5");
+        let a = 1;
+        let b = 0;
+        let fibo;
+        let total = 0;
+        for (let i = 0; i < input_number5.value; i++) {
+          fibo = a;
+          a = b + fibo;
+          b = fibo;
+          total += fibo;
+        }
+        result5.innerHTML = total;
+      }
+      function bai6() {
+        let count = 0;
+        let input_num = document.getElementById("input_number");
+        let N = 7;
+        let total = 0;
+        let num = input_num.value;
+        let result = document.getElementById("result");
+        for (let i = 0; i < num; ) {
+          if (N % 7 == 0) {
+            total += N;
+            i++;
+          }
+          N++;
+        }
+        console.log(total);
+        result.innerHTML = total;
+      }
+      function bai7() {
+        let result = document.getElementById("result7");
+
+        for (let i = 1; i <= 100; i++) {
+          if (i % 3 != 0 && i % 5 != 0) {
+            result.innerHTML += i + "<br> ";
+          } else {
+            if (i % 3 == 0 && i % 5 == 0) {
+              result.innerHTML += "FizzBuzz<br> ";
+            } else {
+              if (i % 3 == 0) {
+                result.innerHTML += "Fizz<br> ";
+              }
+              if (i % 5 == 0) {
+                result.innerHTML += "Buzz<br> ";
+              }
+            }
+          }
+        }
+      }
+      // BÀI 8
+      let img = document.getElementById("desc_img");
+      let result = document.getElementById("result8");
+      let btn = document.getElementById("button");
+      function guess_number() {
+        result.style.position = "static";
+        let a = +prompt("Nhập số bắt đầu khoảng bạn muốn dự đoán a", 0);
+        let b = +prompt("Nhập số cuối cùng khoảng bạn muốn dự đoán b", 0);
+        let N = +prompt("Nhập số bạn dự đoán tong khoảng từ a đến b", 0);
+        let ran_num = Math.floor(Math.random() * (b - a + 1)) + a;
+        do {
+          if (N != ran_num) {
+            console.log(ran_num);
+            result.innerHTML = "Bạn đã đoán sai hãy đoán lại";
+            btn.innerText = "REPLAY";
+            break;
+          }
+          if ((N = ran_num)) {
+            // console.log(ran_num);
+            result.style.position = "absolute";
+            result.style.top = "50px";
+            result.innerHTML =
+              "<img src='images/congrats-9.gif' alt='gif' id='congrate' />";
+            break;
+          }
+        } while ((N = ran_num));
+        // img.style.transform = "rotate(360deg)";
+        // img.classList.remove("rotate");
+      }
+      btn.onclick = function btn_func() {
+        if (btn.innerHTML == "REPLAY") {
+          btn.innerHTML = "PLAY";
+        }
+        if (img.classList.contains("rotate")) {
+          img.classList.remove("rotate");
+        } else {
+          img.classList.add("rotate");
+        }
+        guess_number();
+      };
+    </script>
+  </body>
+</html>
