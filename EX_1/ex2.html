@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 2</title>
+  </head>
+  <body>
+    <style>
+      div {
+        margin: 20px 0;
+      }
+    </style>
+    <input type="number" id="input_number" />
+    <input type="button" onclick="push_num()" value="Push number" />
+    <br />
+    <div id="show_number"></div>
+    <div id="show_result"></div>
+    <input type="button" onclick="max_number()" value="Find max number" />
+
+    <script>
+      let number = [];
+      let result_number = [];
+      let number_input = document.getElementById("input_number");
+      let number_list = document.getElementById("show_number");
+      let result = document.getElementById("show_result");
+      function push_num() {
+        let value = parseInt(number_input.value);
+        number.push(value);
+        number_list.innerHTML = number;
+      }
+      let max;
+      function max_number() {
+        for (let i = 0; i < number.length; i++) {
+          max = number[0];
+          if (number[i] > max) {
+            max = number[i];
+            console.log(number[i]);
+          }
+          result.innerHTML = max;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 7</title>
+  </head>
+  <body>
+    <input type="number" name="" id="input_num" />
+    <input
+      type="button"
+      name=""
+      id="check"
+      value="Check"
+      onclick="range_num()"
+    />
+    <script>
+      let number_list = [10, 2, 5, 20, 15, 30, 26, 25];
+      // let input_num = document.getElementById("input_num");
+      function range_num() {
+        number_list.sort((a, b) => b - a);
+        console.log(number_list);
+      }
+    </script>
+  </body>
+</html>

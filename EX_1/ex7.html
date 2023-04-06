@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 7</title>
+  </head>
+  <body>
+    <input type="number" name="" id="input_num" />
+    <input
+      type="button"
+      name=""
+      id="check"
+      value="Check"
+      onclick="Remove_num()"
+    />
+    <script>
+      let number_list = [10, 2, 5, 20, 15, 30, 26, 25];
+      let input_num = document.getElementById("input_num");
+      function Remove_num() {
+        value = input_num.value;
+        for (let i = 0; i < number_list.length; i++) {
+          if (value == number_list[i]) {
+            number_list.splice(i, 1);
+            number_list.push(0);
+          }
+        }
+        console.log(number_list);
+      }
+    </script>
+  </body>
+</html>

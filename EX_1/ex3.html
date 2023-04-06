@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 3</title>
+  </head>
+  <body>
+    <div id="show_max">Số lớn nhất là:</div>
+    <div id="show_avg">Số trung bình là:</div>
+    <input type="button" onclick="cal()" value="Calculation" />
+
+    <script>
+      let number = [10, 2, 5, 20, 15, 30, 26, 25];
+      let result_number = [];
+      let max_num = document.getElementById("show_max");
+      let show_avg = document.getElementById("show_avg");
+      let avg = 0;
+      let max;
+      function cal() {
+        for (let i = 0; i < number.length; i++) {
+          max = number[0];
+          if (number[i] > max) {
+            max = number[i];
+          }
+          avg += number[i];
+        }
+        avg = avg / number.length;
+        max_num.innerHTML += max;
+        show_avg.innerHTML += avg;
+      }
+    </script>
+  </body>
+</html>
