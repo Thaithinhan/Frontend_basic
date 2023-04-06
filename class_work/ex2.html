@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI THỰC HÀNH 2</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>English</th>
+          <th>Vietnamese</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="eng" id="eng" /></td>
+          <td><input type="text" name="vie" id="vie" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="button" value="Search" onclick="translateEng()" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- NHÚNG JS -->
+    <script>
+      let vie_trans = document.getElementById("vie");
+      let eng_trans = document.getElementById("eng");
+      let english = [
+        "go",
+        "right",
+        "left",
+        "estimate",
+        "check",
+        "review",
+        "fix",
+      ];
+      let vietnamese = [
+        "đi",
+        "phải",
+        "trái",
+        "ước tính",
+        "kiểm tra",
+        "ôn tập",
+        "sửa",
+      ];
+      function translateEng() {
+        let eng_value = eng_trans.value;
+        for (let i = 0; i < english.length; i++) {
+          if (eng_value == english[i]) {
+            //   console.log(eng_value == english[i]);
+            console.log(vietnamese[i]);
+            vie_trans.value = vietnamese[i];
+            console.log(vie_trans.value);
+          } else {
+            vie_trans.value = "Sai";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

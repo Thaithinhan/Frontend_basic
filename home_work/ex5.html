@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành 5</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: 13px;
+      }
+      .container {
+        max-width: 310px;
+        margin: auto;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      td {
+        width: 30px;
+        height: 30px;
+        border: 0.5px solid;
+        transition: all 0.25s;
+      }
+      td:hover {
+        background-color: rgb(44, 195, 44);
+      }
+      button {
+        padding: 2px 15px;
+      }
+    </style>
+    <div class="container">
+      <table></table>
+      <button onclick="clickX()">X</button>
+      <button onclick="clickY()">Y</button>
+    </div>
+    <script>
+      let table = document.querySelector("table");
+      let tr = "";
+      let chess = [];
+      // Tạo bảng cờ caro
+      for (let row = 0; row < 10; row++) {
+        tr += "<tr>";
+        chess[row] = [];
+        for (let col = 0; col < 10; col++) {
+          chess[row][col] = "";
+          tr += `<td id="${row}_${col}" onclick="mark_sign(this)"> ${chess[row][col]} </td>`;
+        }
+        tr += "</tr>";
+      }
+      table.innerHTML += tr;
+      let td_tags = document.querySelectorAll("td");
+      let x = "x";
+      let o = "o";
+      let totalX = 0;
+      let totalO = 0;
+      let isX = true;
+      // console.log(td_tags);
+      function mark_sign(element) {
+        if (totalO == 0 && totalX == 0) {
+          element.innerText = x;
+        }
+        for (let i = 0; i < td_tags.length; i++) {
+          if (td_tags[i].innerText == x) {
+            totalX += 1;
+          }
+          if (td_tags[i].innerText == o) {
+            totalO += 1;
+          }
+          if (totalX >= totalO) {
+            element.innerText = o;
+          }
+        }
+        console.log(totalX, totalO);
+      }
+    </script>
+  </body>
+</html>
