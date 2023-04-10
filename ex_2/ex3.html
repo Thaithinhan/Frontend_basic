@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP 3</title>
+  </head>
+  <body>
+    <script>
+      function factorial(n) {
+        if (n == 0) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
+      console.log(factorial(3));
+
+      function factorial2(x) {
+        let t = 1;
+        for (let i = 0; i <= x; i++) {
+          if (i == 0) {
+            t = 1;
+          } else {
+            t *= i;
+          }
+        }
+        return t;
+      }
+      console.log(factorial2(3));
+    </script>
+  </body>
+</html>

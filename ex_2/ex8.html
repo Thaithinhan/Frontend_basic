@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP 8</title>
+  </head>
+  <body>
+    <input type="text" id="input_num" oninput="input_num()" />
+    <input type="button" onclick="add_array()" value="ADD" />
+    <br /><br />
+    <input type="text" id="result" />
+    <input type="button" onclick="reverse_array()" value="REVERSE" />
+    <script>
+      let arr = [];
+      let value_input = "";
+      function input_num() {
+        value_input = document.getElementById("input_num").value;
+      }
+      function add_array() {
+        value_input = value_input.trim().split(" ");
+        //    arr.push(value_input);
+        console.log(value_input);
+      }
+      function reverse_array() {
+        value_input.forEach(function (item, index, arr) {
+          arr[index] = [arr.length - 1 - index];
+          console.log(arr);
+        });
+      }
+    </script>
+  </body>
+</html>

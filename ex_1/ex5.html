@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP 5</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      onchange="input_star(this)"
+      id="input_star"
+      placeholder="Input your star"
+    />
+    <div id="result"></div>
+    <script>
+      let stars = [
+        "polaris",
+        "aldebaran",
+        "deneb",
+        "vega",
+        "altair",
+        "dubhe",
+        "regulus",
+      ];
+      let constellations = [
+        "Ursa Minor",
+        "Tarurus",
+        "Cygnus",
+        "Lyra",
+        "Aquila",
+        "Ursa Major",
+        "Leo",
+      ];
+      let result = "";
+      function findStar(n) {
+        stars.forEach(function (star, index) {
+          if (n == star) {
+            result = constellations[index];
+            console.log(result);
+          } else {
+            result = "No have any constellation";
+          }
+        });
+        return result;
+      }
+      function input_star(element) {
+        let star = element.value;
+        let find = findStar(star);
+        document.getElementById("result").innerHTML = `Kết quả: ${find}`;
+      }
+    </script>
+  </body>
+</html>
