@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP 1</title>
+  </head>
+  <body>
+    <canvas
+      id="my_rectangle"
+      width="800"
+      height="400"
+      style="border: 1px solid #f55f5f"
+    ></canvas>
+    <div id="perimeter"></div>
+    <div id="area"></div>
+    <script>
+      let Rectangle = function (x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.getPeimeter = function () {
+          return (width + height) * 2;
+        };
+        this.area = function () {
+          return width * height;
+        };
+        this.createRectangle = function () {
+          let ctx = document.getElementById("my_rectangle").getContext("2d");
+          ctx.strokeRect(x, y, width, height);
+        };
+      };
+      let rectangle = new Rectangle(20, 50, 150, 80);
+      rectangle.createRectangle();
+      let perimeter = document.getElementById("perimeter");
+      let area = document.getElementById("area");
+      perimeter.innerHTML = `Chu vi hình chữ nhật: ${rectangle.getPeimeter()}`;
+      area.innerHTML = `Diện tích hình chữ nhật: ${rectangle.area()}`;
+    </script>
+  </body>
+</html>

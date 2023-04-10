@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI TẬP 3</title>
+  </head>
+  <body>
+    <script>
+      let Mobile = function (battery) {
+        this.battery = battery;
+        this.isTyping = [];
+        this.inbox = [];
+        this.send = [];
+        this.checkOnOff = function () {
+          if (this.battery > 0) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+        this.turn_on = function () {
+          return "Mobile is on";
+        };
+        this.turn_off = function () {
+          return "Mobile is off";
+        };
+        this.chargeBattery = function () {
+          return this.battery++;
+        };
+        this.typingMessage = function () {
+          let typingMessage = prompt("Nhập tin nhắn cần soạn");
+          this.isTyping.push(typingMessage);
+          return this.isTyping;
+        };
+        this.receiveMessage = function (str) {
+          alert("Có 1 tin nhắn: " + str);
+          this.inbox.push(str);
+          return this.inbox;
+        };
+        this.send_message = function () {
+          let send_message = prompt("Nhập tin nhắn cần gửi");
+          this.send.push(send_message);
+          alert("Đã gửi tin nhắn");
+          return this.send;
+        };
+        this.seenInbox = function (index) {
+          return `Đã xem tin nhắn ${this.inbox[index]}`;
+        };
+        this.seenSendMes = function (index) {
+          return `Đã xem tin nhắn ${this.send[index]}`;
+        };
+        this.afterUseFunction = function () {
+          return --this.battery;
+        };
+      };
+      let nokia = new Mobile(100);
+      let iphone = new Mobile(60);
+      let nokia_sendMess = nokia.send_message();
+      let battery_nokia = nokia.afterUseFunction();
+      let iphone_receiveMess = iphone.receiveMessage(nokia_sendMess);
+      //  console.log(battery_nokia);
+    </script>
+  </body>
+</html>
