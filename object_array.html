@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBJECT VÀ ARRAY</title>
+  </head>
+  <body>
+    <style>
+      main {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+      }
+      h1 {
+        text-align: center;
+      }
+      h3 {
+        background-color: rgb(63, 62, 62);
+        color: white;
+        padding: 10px;
+        margin: 0;
+      }
+      #add_btn {
+        background-color: rgb(63, 62, 62);
+        color: white;
+        padding: 5px 10px;
+      }
+      .search {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .search button,
+      .search input {
+        padding: 10px 15px;
+      }
+      #show_content {
+        padding: 0 20px;
+      }
+      #show_content header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      tr > td,
+      tr > th {
+        padding: 10px;
+        border-bottom: 0.5px solid lightgrey;
+        text-align: center;
+      }
+      tr td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      td > button.btn_edit {
+        padding: 5px 15px;
+        background: white;
+        border-color: blue;
+        color: blue;
+      }
+      td > button.btn_delete {
+        padding: 5px 15px;
+        background: white;
+        border-color: red;
+        color: red;
+      }
+      #add_form {
+        width: 100%;
+        background-color: lime;
+        position: absolute;
+        top: -500%;
+        padding: 20px;
+        z-index: 10;
+        transition: all 0.5s;
+      }
+      #add_form input {
+        display: block;
+        max-width: 100%;
+        padding: 10px 0;
+        margin: 10px;
+      }
+      #add_form #add_finish {
+        padding: 5px 15px;
+        background-color: yellow;
+        border-color: yellow;
+        font-weight: bold;
+      }
+      #add_form input[type="button"] {
+        padding: 5px 15px;
+        background-color: red;
+        border-color: red;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+    <main>
+      <h1>QUẢN LÝ DỮ LIỆU USER</h1>
+      <div class="wrapper">
+        <h3>My App Info User</h3>
+      </div>
+      <div id="show_content">
+        <header>
+          <h2>Users</h2>
+          <input
+            type="button"
+            id="add_btn"
+            value="Add User"
+            onclick="add_user()"
+          />
+        </header>
+        <div class="search">
+          <input
+            type="text"
+            name="search_input"
+            id="search_input"
+            placeholder="Username or First name"
+            oninput="search_current_user(this.value)"
+          />
+          <button onclick="search_user()">Search</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Avatar</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="images/avt1.png" alt="" /></td>
+              <td>Trâm</td>
+              <td>Lê</td>
+              <td>yunahigurashi</td>
+              <td>
+                <button class="btn_edit">Edit</button>
+                <button class="btn_delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- TẠO FORM ADD NEW USER -->
+      <form action="" method="post" id="add_form">
+        <div class="form_group">
+          <label for="new_id">Nhập ID</label>
+          <input type="number" id="new_id" placeholder="Nhập ID New User" />
+        </div>
+        <div class="form_group">
+          <label for="avt_new_img">Chọn ảnh của bạn</label>
+          <input type="file" id="avt_new_img" accept="image/*" />
+        </div>
+        <div class="form_group">
+          <label for="first">Nhập First Name</label>
+          <input type="text" id="first" placeholder="Nhập First Name" />
+        </div>
+        <div class="form_group">
+          <label for="last">Nhập Last Name</label>
+          <input type="text" id="last" placeholder="Nhập Last Name" />
+        </div>
+        <div class="form_group">
+          <label for="username">Nhập UserName</label>
+          <input type="text" id="username" placeholder="Nhập UserName" />
+        </div>
+        <input type="submit" value="OK" id="add_finish" />
+        <input
+          type="button"
+          value="X"
+          id="close_btn"
+          onclick="close_add_form()"
+        />
+      </form>
+    </main>
+    <script>
+      const users = [
+        {
+          id: 1,
+          avt_image: "images/avt1.png",
+          fist_name: "Trâm",
+          last_name: "Lê",
+          user_name: "yunahigurashi",
+        },
+        {
+          id: 2,
+          avt_image: "images/avt2.png",
+          fist_name: "Nhàn",
+          last_name: "Thái",
+          user_name: "ttnhandn",
+        },
+        {
+          id: 3,
+          avt_image: "images/avt3.png",
+          fist_name: "Siêu",
+          last_name: "Thái",
+          user_name: "sieuthaidad",
+        },
+        {
+          id: 4,
+          avt_image: "images/avt4.png",
+          fist_name: "Thưởng",
+          last_name: "Thái",
+          user_name: "thuongthaidn",
+        },
+        {
+          id: 5,
+          avt_image: "images/avt5.png",
+          fist_name: "Nga",
+          last_name: "Nguyễn",
+          user_name: "nganguyendnd",
+        },
+        {
+          id: 6,
+          avt_image: "images/avt6.png",
+          fist_name: "Ân",
+          last_name: "Thái",
+          user_name: "anthai1993",
+        },
+        {
+          id: 7,
+          avt_image: "images/avt7.png",
+          fist_name: "Khoa",
+          last_name: "Trần",
+          user_name: "trandangkhoa",
+        },
+        {
+          id: 8,
+          avt_image: "images/avt7.png",
+          fist_name: "Khoa",
+          last_name: "Trần",
+          user_name: "trandangkhoa",
+        },
+        {
+          id: 9,
+          avt_image: "images/avt7.png",
+          fist_name: "Khoa",
+          last_name: "Trần",
+          user_name: "trandangkhoa",
+        },
+      ];
+      function render_user(users) {
+        let table = document.querySelector("table");
+        let table_content = ` <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Avatar</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>`;
+        users.forEach((user, index) => {
+          table_content += ` <tr>
+                          <td>${user.id}</td>
+                          <td><img src="${user.avt_image}" alt="avt_imag" /></td>
+                          <td>${user.fist_name}</td>
+                          <td>${user.last_name}</td>
+                          <td>${user.user_name}</td>
+                          <td>
+                            <button class="btn_edit" onclick="edit_user(this, ${index})">Edit</button>
+                            <button class="btn_delete" onclick="delete_user(this, ${index})">Delete</button>
+                          </td>
+                        </tr>`;
+          table.innerHTML = table_content;
+        });
+      }
+      render_user(users);
+      //FUNCTION DELETE
+      function delete_user(e, index) {
+        users.splice(index, 1);
+        render_user(users);
+      }
+      //FUNCTION SEARCH INPUT VALUE
+      function search_user() {
+        let search_users = [];
+        let search_input = document.getElementById("search_input");
+        let table = document.querySelector("table");
+        table.innerHTML = "";
+        users.forEach(function (user) {
+          if (
+            search_input.value.toLowerCase().trim() ==
+              user.user_name.toLowerCase() ||
+            search_input.value.toLowerCase().trim() ==
+              user.fist_name.toLowerCase()
+          ) {
+            search_users.push(user);
+          }
+        });
+        if (search_users.length > 0) {
+          render_user(search_users);
+        } else {
+          table.innerHTML = "Không tìm thấy dữ liệu";
+        }
+      }
+      //CÁCH 2 CHO SEARCH
+      function search_current_user(value) {
+        const find_user = users.filter(
+          (user) =>
+            user.fist_name
+              .toLocaleLowerCase()
+              .includes(value.toLocaleLowerCase()) ||
+            user.user_name
+              .toLocaleLowerCase()
+              .includes(value.toLocaleLowerCase())
+        );
+        render_user(find_user);
+      }
+      // ADD NEW USER
+
+      function add_user() {
+        let form_add = document.getElementById("add_form");
+        form_add.style.top = "0px";
+      }
+      document
+        .getElementById("add_finish")
+        .addEventListener("click", function (e) {
+          let form_add = document.getElementById("add_form");
+          let new_first = document.getElementById("first");
+          let new_last = document.getElementById("last");
+          let new_username = document.getElementById("username");
+          let new_id = document.getElementById("new_id");
+          let new_image = document.getElementById("avt_new_img");
+          if (
+            new_first.value.length < 2 ||
+            new_last.value.length < 2 ||
+            new_username.value.length < 2
+          ) {
+            alert("Xin vui lòng nhập mỗi trường thông tin từ 2 ký tự trở lên");
+          } else {
+            let new_user = {};
+            new_user["id"] = users[users.length - 1].id + 1;
+            new_user["fist_name"] = new_first.value;
+            new_user["last_name"] = new_last.value;
+            new_user["user_name"] = new_username.value;
+            const file = new_image.files[0];
+            const reader = new FileReader();
+            let src;
+            reader.addEventListener(
+              "load",
+              () => {
+                // convert image file to base64 string
+                src = reader.result;
+                new_user["avt_image"] = src;
+                users.push(new_user);
+                render_user(users);
+              },
+              false
+            );
+            if (file) {
+              reader.readAsDataURL(file);
+            }
+            document.getElementById("first").value = "";
+            document.getElementById("last").value = "";
+            document.getElementById("username").value = "";
+            document.getElementById("new_id").value = "";
+            form_add.style.top = "-500%";
+          }
+          e.preventDefault();
+        });
+      function close_add_form() {
+        let form_add = document.getElementById("add_form");
+        form_add.style.top = "-500%";
+      }
+    </script>
+  </body>
+</html>
