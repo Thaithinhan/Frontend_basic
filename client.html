@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLIENT - ĐĂNG QUANG WATCH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headertop">
+        <div class="header_left">
+          <a href="client.html"><img src="image/logo.jpg" alt="" /></a>
+          <input
+            type="text"
+            id="search_input"
+            data-search="best_sell"
+            oninput="search_product(this.value)"
+            placeholder="Nhập từ khoá tìm kiếm"
+          />
+          <button id="btn_seacrh"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="header_right">
+          <div>
+            <a href="#" id="cart"
+              ><i class="fa-solid fa-cart-plus"></i>
+              <p>
+                Giỏ hàng
+                <br />
+                <span class="color_yellow">[0]Sản phẩm</span>
+              </p></a
+            >
+          </div>
+          <div>
+            <a href="tel:18006005" id="phone"
+              ><i class="bi bi-telephone-fill"></i>
+              <p>
+                Hotline
+                <br />
+                <span class="color_yellow">1800.6005</span>
+              </p></a
+            >
+          </div>
+          <div>
+            <a href="#" id="address"
+              ><i class="fa-solid fa-location-dot"></i>
+              <p>
+                Hệ thống
+                <br />
+                <span class="color_yellow">63 Cửa hàng</span>
+              </p></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <ul class="nav">
+          <li id="all_branch">
+            <a href=""
+              ><i class="fa-solid fa-sort-down"></i> tất cả thương hiệu</a
+            >
+            <ul id="sub_menu_nav">
+              <li>Đồng hồ Phillips</li>
+              <li>Đồng hồ Atlantics Swiss</li>
+              <li>Đồng hồDiamond D</li>
+              <li>Đồng hồ Epos Swiss</li>
+              <li>Đồng hồ Jacquet Leman</li>
+              <li>Đồng hồ Cityzen</li>
+            </ul>
+          </li>
+          <li><a href=""> Đồng hồ</a></li>
+          <li><a href=""> kính mắt</a></li>
+          <li><a href="">dây da</a></li>
+          <li><a href=""> Gọng kính</a></li>
+          <li><a href="">Bút ký</a></li>
+          <li><a href="">Hộp đựng đồng hồ</a></li>
+          <li id="watch_limited"><a href="">đồng hồ limited</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="tab_hot">
+        <div id="hot_tab_top">
+          <ul class="list_menu_hot">
+            <li class="active">
+              <a href="#" id="best_sell" onclick="show_product(this, this.id)">
+                <img src="image/modal.jpg" alt="" />Đồng hồ bán chạy</a
+              >
+            </li>
+            <li>
+              <a href="#" id="for_man" onclick="show_product(this, this.id)">
+                <img src="image/dh_doi_nam_8.jpg" alt="" />Đồng hồ nam</a
+              >
+            </li>
+            <li>
+              <a href="#" id="for_woman" onclick="show_product(this, this.id)">
+                <img src="image/dong_ho_nu_pc.jpg" alt="" />Đồng hồ nữ</a
+              >
+            </li>
+            <li>
+              <a href="#" id="limited" onclick="show_product(this, this.id)">
+                <img src="image/hlimited.jpg" alt="" />Đồng hồ LIMITED</a
+              >
+            </li>
+          </ul>
+        </div>
+        <ul class="show_product">
+          <li>
+            <a href="#"
+              ><img src="image/1484739335_dong-ho-nu34.jpg" alt=""
+            /></a>
+            <p>Model:</p>
+            <p>Loại đồng hồ:</p>
+            <p>Mô tả</p>
+            <span class="sale-up">-20%</span>
+            <p class="price">4.248.000đ</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <ul class="col1">
+        <h5>Tìm cửa hàng</h5>
+        <li><a href="#">Tìm vị trí showroom</a></li>
+        <li><a href="#">Hướng dẫn mua hàng online</a></li>
+        <li><a href="#">Mua hàng trả góp 0%</a></li>
+        <li><a href="#">Giao hàng & Thanh toán</a></li>
+        <li>
+          <a href=""><img src="image/logo.jpg" alt="" /></a>
+        </li>
+      </ul>
+      <ul class="col2">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Tin tức và sự kiện</a></li>
+        <li><a href="#">Gửi góp ý khiếu nại</a></li>
+        <li><a href="#">Chính sách đối ngoại</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Chính sách bảo hành</a></li>
+      </ul>
+      <ul class="col2">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Tin tức và sự kiện</a></li>
+        <li><a href="#">Gửi góp ý khiếu nại</a></li>
+        <li><a href="#">Chính sách đối ngoại</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Chính sách bảo hành</a></li>
+      </ul>
+      <ul class="col4">
+        <li>
+          <a href="#"><img src="image/logofb.jpg" alt="" /></a>
+          Fanpage Facebook
+        </li>
+        <li>
+          <a href="#"><img src="image/logoyt.jpg" alt="" /></a>
+          Youtube
+        </li>
+        <li>
+          <a href="#"><img src="image/logofb.jpg" alt="" /></a>
+          Fanpage Facebook
+        </li>
+      </ul>
+    </footer>
+    <script>
+      const Products = function (
+        id,
+        model,
+        type,
+        describe,
+        isBestSeller,
+        isLimited,
+        price,
+        image
+      ) {
+        this.id = id;
+        this.model = model;
+        this.type = type;
+        this.describe = describe;
+        this.isBestSeller = isBestSeller;
+        this.isLimited = isLimited;
+        this.price = price;
+        this.image = image;
+      };
+      const products_list = [
+        new Products(
+          1,
+          "ABCN1",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          false,
+          3600000,
+          "image/Nam1.jpg"
+        ),
+        new Products(
+          2,
+          "ABCN2",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          false,
+          4000000,
+          "image/Nam2.jpg"
+        ),
+        new Products(
+          3,
+          "ABCN3",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          true,
+          50000000,
+          "image/Nam3.jpg"
+        ),
+        new Products(
+          4,
+          "ABCN4",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          false,
+          5000000,
+          "image/Nam4.jpg"
+        ),
+        new Products(
+          5,
+          "ABCN5",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          true,
+          10000000,
+          "image/Nam5.jpg"
+        ),
+        new Products(
+          6,
+          "ABCN6",
+          "man",
+          "Philippe Auguste PA5016F - Đồng hồ Nam - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          false,
+          10000000,
+          "image/Nam6.jpg"
+        ),
+        new Products(
+          7,
+          "ABCNU1",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          false,
+          3000000,
+          "image/nu.jpg"
+        ),
+        new Products(
+          8,
+          "ABCNU2",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          true,
+          30000000,
+          "image/nu2.jpg"
+        ),
+        new Products(
+          9,
+          "ABCNU3",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          false,
+          true,
+          45000000,
+          "image/nu3.jpg"
+        ),
+        new Products(
+          10,
+          "ABCNU4",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          false,
+          19000000,
+          "image/nu4.jpg"
+        ),
+        new Products(
+          11,
+          "ABCNU5",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          false,
+          19000000,
+          "image/nu5.jpg"
+        ),
+        new Products(
+          12,
+          "ABCNU6",
+          "woman",
+          "Philippe Auguste PA5016F - Đồng hồ Nữ - Size mặt 42 mm - Sapphire - Quartz/Pin - Chịu nước 5 ATM",
+          true,
+          true,
+          50000000,
+          "image/nu6.jpg"
+        ),
+      ];
+      ////////////TẠO FUNCTION RENDER SẢN PHẨM///////////////
+      function render_product(products) {
+        let show_product = document.querySelector(".show_product");
+        show_product.innerHTML = "";
+        products.forEach((product, index) => {
+          let li = `  <li>
+            <a href="#"
+              ><img src="${product.image}" alt=""
+            /></a>
+            <p>Model: ${product.model}</p>
+            <p>Loại đồng hồ: ${product.type}</p>
+            <p>Mô tả: ${product.describe}</p>
+            <span class="sale-up">-20%</span>
+            <p class="price">${product.price}đ</p>
+          </li>`;
+          show_product.innerHTML += li;
+        });
+      }
+      const best_sell = products_list.filter((product) => product.isBestSeller);
+      render_product(best_sell);
+      function show_product(element, id) {
+        event.preventDefault();
+        let search_input = document.getElementById("search_input");
+        search_input.setAttribute("data-search", id);
+        if (id == "best_sell") {
+          const product_clicked = products_list.filter(
+            (product) => product.isBestSeller
+          );
+          console.log(product_clicked);
+          render_product(product_clicked);
+          search_product(value);
+        }
+        if (id == "limited") {
+          const product_clicked1 = products_list.filter(
+            (product) => product.isLimited
+          );
+          console.log(id);
+          render_product(product_clicked1);
+          search_product(value);
+        }
+        if (id == "for_man") {
+          const product_clicked = products_list.filter(
+            (product) => product.type == "man"
+          );
+          render_product(product_clicked);
+          search_product(value);
+        }
+        if (id == "for_woman") {
+          const product_clicked = products_list.filter(
+            (product) => product.type == "woman"
+          );
+          render_product(product_clicked);
+          search_product(value);
+        }
+      }
+      /////////FUNCTION SEARCH SẢN PHẨM//////////////
+      function search_product(value) {
+        let search_input = document.getElementById("search_input");
+        let data_search = search_input.getAttribute("data-search");
+        if (data_search == "best_sell") {
+          const search_product = products_list.filter(
+            (product) =>
+              product.isBestSeller &&
+              product.model.toLowerCase().includes(value.toLowerCase().trim())
+          );
+          render_product(search_product);
+        }
+        if (data_search == "for_man") {
+          const search_product = products_list.filter(
+            (product) =>
+              product.type == "man" &&
+              product.model.toLowerCase().includes(value.toLowerCase().trim())
+          );
+          render_product(search_product);
+        }
+        if (data_search == "for_woman") {
+          const search_product = products_list.filter(
+            (product) =>
+              product.type == "woman" &&
+              product.model.toLowerCase().includes(value.toLowerCase().trim())
+          );
+          render_product(search_product);
+        }
+        if (data_search == "limited") {
+          const search_product = products_list.filter(
+            (product) =>
+              product.isLimited &&
+              product.model.toLowerCase().includes(value.toLowerCase().trim())
+          );
+          render_product(search_product);
+        }
+      }
+    </script>
+  </body>
+</html>

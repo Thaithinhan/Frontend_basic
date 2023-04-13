@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIN - ĐĂNG QUANG WATCH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headertop">
+        <div class="header_left">
+          <a href="client.html"><img src="image/logo.jpg" alt="" /></a>
+          <input
+            type="text"
+            id="search_input"
+            data-search="best_sell"
+            oninput="search_product(this.value)"
+            placeholder="Nhập từ khoá tìm kiếm"
+          />
+          <button id="btn_seacrh"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="header_right">
+          <div>
+            <a href="#" id="cart"
+              ><i class="fa-solid fa-cart-plus"></i>
+              <p>
+                Giỏ hàng
+                <br />
+                <span class="color_yellow"><b>[0] </b> Sản phẩm</span>
+              </p></a
+            >
+          </div>
+          <div>
+            <a href="tel:18006005" id="phone"
+              ><i class="bi bi-telephone-fill"></i>
+              <p>
+                Hotline
+                <br />
+                <span class="color_yellow">1800.6005</span>
+              </p></a
+            >
+          </div>
+          <div>
+            <a href="#" id="address"
+              ><i class="fa-solid fa-location-dot"></i>
+              <p>
+                Hệ thống
+                <br />
+                <span class="color_yellow">63 Cửa hàng</span>
+              </p></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <ul class="nav">
+          <li id="all_branch">
+            <a href=""
+              ><i class="fa-solid fa-sort-down"></i> tất cả thương hiệu</a
+            >
+            <ul id="sub_menu_nav">
+              <li>Đồng hồ Phillips</li>
+              <li>Đồng hồ Atlantics Swiss</li>
+              <li>Đồng hồDiamond D</li>
+              <li>Đồng hồ Epos Swiss</li>
+              <li>Đồng hồ Jacquet Leman</li>
+              <li>Đồng hồ Cityzen</li>
+            </ul>
+          </li>
+          <li><a href=""> Đồng hồ</a></li>
+          <li><a href=""> kính mắt</a></li>
+          <li><a href="">dây da</a></li>
+          <li><a href=""> Gọng kính</a></li>
+          <li><a href="">Bút ký</a></li>
+          <li><a href="">Hộp đựng đồng hồ</a></li>
+          <li id="watch_limited"><a href="">đồng hồ limited</a></li>
+        </ul>
+        <button id="creat_product" onclick="open_add_form(this)">
+          CREAT PRODUCT
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="tab_hot">
+        <div id="hot_tab_top">
+          <ul class="list_menu_hot">
+            <li class="active">
+              <a href="#" id="best_sell" onclick="show_product(this, this.id)">
+                <img src="image/modal.jpg" alt="" />Đồng hồ bán chạy</a
+              >
+            </li>
+            <li>
+              <a href="#" id="for_man" onclick="show_product(this, this.id)">
+                <img src="image/dh_doi_nam_8.jpg" alt="" />Đồng hồ nam</a
+              >
+            </li>
+            <li>
+              <a href="#" id="for_woman" onclick="show_product(this, this.id)">
+                <img src="image/dong_ho_nu_pc.jpg" alt="" />Đồng hồ nữ</a
+              >
+            </li>
+            <li>
+              <a href="#" id="limited" onclick="show_product(this, this.id)">
+                <img src="image/hlimited.jpg" alt="" />Đồng hồ LIMITED</a
+              >
+            </li>
+          </ul>
+        </div>
+        <ul class="show_product" data-delete="best_sell" data-edit="best_sell">
+          <li>
+            <a href="#"
+              ><img src="image/1484739335_dong-ho-nu34.jpg" alt=""
+            /></a>
+            <p>Model:</p>
+            <p>Loại đồng hồ:</p>
+            <p>Mô tả</p>
+            <span class="sale-up">-20%</span>
+            <p class="price">4.248.000đ</p>
+            <button class="btn_edit" onclick="edit_product()">EDIT</button>
+            <button class="btn_del" onclick="delete_product()">DELETE</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <div id="add_product">
+      <h3>THÊM SẢN PHẨM MỚI</h3>
+      <div class="group_input">
+        <label for="new_model">New Model</label>
+        <input
+          type="text"
+          name=""
+          id="new_model"
+          placeholder="Nhập new model.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="new_type">New Type</label>
+        <input
+          type="text"
+          name=""
+          id="new_type"
+          placeholder="Nhập new type.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="new_describe">New Describe</label>
+        <input
+          type="text"
+          name=""
+          id="new_describe"
+          placeholder="Nhập new describe.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="new_price">New Price</label>
+        <input
+          type="number"
+          name=""
+          id="new_price"
+          placeholder="Nhập new price.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="new_image">New Image</label>
+        <input type="file" name="" id="new_image" accept="image/*" />
+      </div>
+      <div class="group_input">
+        <label>Best Seller?</label>
+        <input type="radio" id="isBestSeller" name="isBestSeller" />
+        <label for="isBestSeller">Yes</label>
+        <input type="radio" id="NoisBestSeller" name="isBestSeller" />
+        <label for="NoisBestSeller">No</label>
+      </div>
+      <div class="group_input">
+        <label>Limited</label>
+        <input type="radio" id="isLimited" name="isLimited" />
+        <label for="isLimited">Yes</label>
+        <input type="radio" id="NoisLimited" name="isLimited" />
+        <label for="NoisLimited">No</label>
+      </div>
+      <button onclick="finish_add()">FINISH ADD</button>
+    </div>
+    <div id="edit_product">
+      <h3>UPDATE SẢN PHẨM MỚI</h3>
+      <div class="group_input">
+        <label for="edit_model">New Model</label>
+        <input
+          type="text"
+          name=""
+          id="edit_model"
+          placeholder="Nhập new model.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="edit_type">New Type</label>
+        <input
+          type="text"
+          name=""
+          id="edit_type"
+          placeholder="Nhập new type.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="edit_describe">New Describe</label>
+        <input
+          type="text"
+          name=""
+          id="edit_describe"
+          placeholder="Nhập new describe.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="edit_price">New Price</label>
+        <input
+          type="number"
+          name=""
+          id="edit_price"
+          placeholder="Nhập new price.."
+        />
+      </div>
+      <div class="group_input">
+        <label for="edit_image">New Image</label>
+        <input type="file" name="" id="edit_image" accept="image/*" />
+      </div>
+      <div class="group_input">
+        <label>Best Seller?</label>
+        <input type="radio" id="edit_isBestSeller" name="edit_isBestSeller" />
+        <label for="edit_isBestSeller">Yes</label>
+        <input type="radio" id="edit_NoisBestSeller" name="edit_isBestSeller" />
+        <label for="edit_NoisBestSeller">No</label>
+      </div>
+      <div class="group_input">
+        <label>Limited</label>
+        <input type="radio" id="edit_isLimited" name="edit_isLimited" />
+        <label for="isLimited">Yes</label>
+        <input type="radio" id="edit_NoisLimited" name="edit_isLimited" />
+        <label for="edit_NoisLimited">No</label>
+      </div>
+      <div class="group_input">
+        <label for="edit_id">ID</label>
+        <input type="text" name="" id="edit_id" readonly />
+      </div>
+      <button onclick="finish_edit()">FINISH EDIT</button>
+    </div>
+    <footer>
+      <ul class="col1">
+        <h5>Tìm cửa hàng</h5>
+        <li><a href="#">Tìm vị trí showroom</a></li>
+        <li><a href="#">Hướng dẫn mua hàng online</a></li>
+        <li><a href="#">Mua hàng trả góp 0%</a></li>
+        <li><a href="#">Giao hàng & Thanh toán</a></li>
+        <li>
+          <a href=""><img src="image/logo.jpg" alt="" /></a>
+        </li>
+      </ul>
+      <ul class="col2">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Tin tức và sự kiện</a></li>
+        <li><a href="#">Gửi góp ý khiếu nại</a></li>
+        <li><a href="#">Chính sách đối ngoại</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Chính sách bảo hành</a></li>
+      </ul>
+      <ul class="col2">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Tin tức và sự kiện</a></li>
+        <li><a href="#">Gửi góp ý khiếu nại</a></li>
+        <li><a href="#">Chính sách đối ngoại</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Chính sách bảo hành</a></li>
+      </ul>
+      <ul class="col4">
+        <li>
+          <a href="#"><img src="image/logofb.jpg" alt="" /></a>
+          Fanpage Facebook
+        </li>
+        <li>
+          <a href="#"><img src="image/logoyt.jpg" alt="" /></a>
+          Youtube
+        </li>
+        <li>
+          <a href="#"><img src="image/logofb.jpg" alt="" /></a>
+          Fanpage Facebook
+        </li>
+      </ul>
+    </footer>
+    <script src="app.js"></script>
+    <script></script>
+  </body>
+</html>
