@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+      }
+      input {
+        padding: 10px;
+      }
+      .password {
+        position: relative;
+      }
+      .password i {
+        position: absolute;
+        left: 170px;
+        top: 10px;
+      }
+      header {
+        max-width: 1200px;
+        margin: 20px 0;
+      }
+      nav > a {
+        padding: 10px;
+        font-size: 20px;
+      }
+      header .logo {
+        max-width: 100px;
+        display: none;
+      }
+      header .list_menu {
+        list-style: none;
+        padding: 0;
+        display: none;
+      }
+      header .list_menu li {
+        font-weight: 600;
+        padding: 10px;
+      }
+      header .list_menu li a {
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+      }
+      form p {
+        color: red;
+        font-weight: 600;
+      }
+
+      @media (min-width: 576px) {
+      }
+      /* Medium device 768px and up */
+      @media (min-width: 768px) {
+        header .logo {
+          display: block;
+        }
+      }
+      /* Large device 992px and up */
+      @media (min-width: 992px) {
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        header .toggle_menu {
+          display: none;
+        }
+        header .list_menu {
+          display: flex;
+        }
+      }
+      /* Large device 1200px and up */
+      @media (min-width: 1200px) {
+      }
+    </style>
+    <form action="#" id="login">
+      <input type="text" id="username" placeholder="Fill your user" />
+      <p id="usename_error"></p>
+      <br />
+      <br />
+      <div class="password">
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Your Password"
+        />
+        <i class="fa-solid fa-eye" id="show" onclick="change_type()"></i>
+        <i class="fa-solid fa-eye-slash" id="hide" onclick="change_type()"></i>
+      </div>
+      <p id="password_error"></p>
+      <br />
+      <br />
+      <div class="email">
+        <input type="email" id="email" placeholder="Enter Your email" />
+      </div>
+      <p id="email_error"></p>
+
+      <br />
+      <br />
+      <div class="submit">
+        <input type="submit" value="Submit Form" />
+      </div>
+    </form>
+    <script>
+      function change_type() {
+        let input_pass = document.querySelector(".password input");
+        if (input_pass.type == "password") {
+          input_pass.type = "text";
+          document.querySelector("#hide").style.display = "none";
+          document.querySelector("#show").style.display = "inline-block";
+        } else {
+          input_pass.type = "password";
+          document.querySelector("#hide").style.display = "inline-block";
+          document.querySelector("#show").style.display = "none";
+        }
+      }
+      const list_menu = document.querySelector(".list_menu");
+      const logo = document.querySelector(".logo");
+      let form = document.querySelector("form");
+      let error = {};
+      const users = [
+        { username: "phucdeptrai", password: "daconguoiyeu" },
+        { username: "khoamap", password: "mapquatroi" },
+        { username: "nhangiauco", password: "giauco" },
+      ];
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let user_name = form.querySelector("#username").value;
+        let password = form.querySelector("#password").value;
+        let email = form.querySelector("#email").value;
+        // users.forEach((user) => {
+        //   if (user.username == user_name && user.password == password) {
+        //     alert("Login Successful");
+        //     return;
+        //   }
+        // });
+        ///VALIDATE FORM
+        let username_regex = /^[A-Za-z0-9]{6,}$/;
+        let password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        let email_regex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+        if (username_regex.test(user_name)) {
+          document.querySelector("#usename_error").innerHTML = "";
+        } else {
+          error.username_error =
+            "Username có ít nhất 6 ký tự và không có khoảng trắng";
+          document.querySelector("#usename_error").innerHTML =
+            error.username_error;
+        }
+        if (password_regex.test(password)) {
+          document.querySelector("#password_error").innerHTML = "";
+        } else {
+          error.password_error =
+            "Password có ít nhất 8 ký tự ít nhất một ký tự số, một ký tự hoa, một ký tự thường và không có khoảng trắng";
+          document.querySelector("#password_error").innerHTML =
+            error.password_error;
+        }
+        console.log(email_regex.test(email));
+        if (email_regex.test(email) && email.length > 5) {
+          document.querySelector("#email_error").innerHTML = "";
+        } else {
+          error.email_error = "Email chưa đúng định dạng";
+          document.querySelector("#email_error").innerHTML = error.email_error;
+        }
+      });
+    </script>
+  </body>
+</html>
