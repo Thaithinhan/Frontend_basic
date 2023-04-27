@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #159eec;
+  --secondary-color: #1f2b6c;
+  --third-color: #bfd2f8;
+  --font-workSan: "Work Sans", sans-serif;
+  --font-yevOne: "Yeseva One", cursive;
+}
+.text_upper {
+  text-transform: uppercase;
+}
+body {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  max-width: 1366px;
+  margin: auto;
+}
+header .top_header .container {
+  display: flex;
+  padding: 19px 0 19px;
+  justify-content: space-evenly;
+}
+
+header .top_header .container .logo {
+  color: var(--secondary-color);
+  font-size: 36px;
+  font-family: var(--font-yevOne);
+}
+header .top_header .container .logo span {
+  color: var(--primary-color);
+}
+header .top_header .container .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .top_header .container .info .info-icon {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-workSan);
+  font-size: 16px;
+}
+
+header .top_header .container .info .info-icon img {
+  width: 40.2px;
+  margin-right: 5.5px;
+}
+header .top_header .container .info .info-icon p:first-child {
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin: 0px 0px 2px;
+}
+header .top_header .container .info .info-icon p:last-child {
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0px 0px 2px;
+}
+
+header .bottom_header {
+  display: flex;
+  max-width: 1366px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 187px;
+  background-color: var(--secondary-color);
+}
+header .bottom_header ul {
+  display: flex;
+  gap: 20px;
+  color: var(--third-color);
+}
+header .bottom_header .search {
+  color: var(--third-color);
+  font-size: 16px;
+}
+header .bottom_header .search button {
+  padding: 13px 35px;
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 50px;
+  margin-left: 30px;
+}
+
+/* css phần main */
+main {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+section.top-main {
+  background-image: url("images/banner1.png");
+  height: 550px;
+  background-size: cover;
+  position: relative;
+}
+section.top-main .container {
+  padding: 167px 187px;
+  height: 100%;
+  text-align: left;
+  font-family: var(--font-workSan);
+}
+section.top-main p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+section.top-main h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 400;
+  width: 519px;
+  color: var(--secondary-color);
+  font-family: var(--font-yevOne);
+}
+section.top-main button {
+  border: none;
+  font-family: var(--font-workSan);
+  color: var(--secondary-color);
+  background-color: var(--third-color);
+  padding: 13px 35px;
+  border-radius: 50px;
+}
+section.top-main .container:last-child {
+  height: auto;
+  padding: 0 187px;
+  position: absolute;
+  display: flex;
+  gap: 21px;
+  bottom: -50px;
+}
+.book-appointment {
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  font-size: 16px;
+}
+#booking-first {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+#booking-sec {
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+}
+#booking-third {
+  background-color: var(--primary-color);
+  color: var(--third-color);
+}
+section.top-main .container:last-child img {
+  width: 50px;
+}
+
+section.main-content header {
+  padding: 0 354px;
+  text-align: center;
+  margin-top: 114px;
+  margin-bottom: 61px;
+  font-family: var(--font-workSan);
+}
+section.main-content header h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 18px;
+}
+section.main-content header h2 {
+  color: var(--secondary-color);
+  font-size: 32px;
+  font-family: var(--font-yevOne);
+  margin: 8px 0 15px;
+}
+section.main-content header p {
+  margin-bottom: 32px;
+}
+section.main-content header a span {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+section.main-content .banner {
+  background-image: url("images/banner2.png");
+  height: 250px;
+  background-size: cover;
+  max-width: 992px;
+  margin: auto;
+}
+section.main-content .title {
+  display: flex;
+  gap: 20px;
+  max-width: 992px;
+  margin: auto;
+}
+
+section.main-content .title > ul {
+  border: 1px solid var(--secondary-color);
+  font-family: var(--font-workSan);
+  border-radius: 5px;
+}
+section.main-content .title > ul > li {
+  padding: 24px;
+  text-align: center;
+  display: block;
+  width: 157px;
+}
+section.main-content .title > ul li:nth-child(2),
+section.main-content .title > ul li:last-child {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+section.main-content .title > ul > li img {
+  width: 32px;
+}
+section.main-content .title > ul li:last-child {
+  height: 40px;
+  display: table-cell;
+  align-self: center;
+  font-size: 14px;
+}
+section.main-content .content p:first-child {
+  font-size: 26px;
+  font-family: var(--font-workSan);
+  font-weight: 500;
+}
+section.main-content .content {
+  font-family: var(--font-workSan);
+}
+section.main-content .content > ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 5px;
+  justify-content: space-between;
+}
+section.main-content .content > ul > li {
+  width: calc(50% - 5px);
+  text-align: left;
+  font-size: 18px;
+}
+section.main-content .content > ul > li::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+section.main-content table.specialties {
+  font-family: var(--font-workSan);
+  text-align: center;
+  border-collapse: collapse;
+  width: 992px;
+  margin: auto;
+}
+section.main-content table.specialties tr td {
+  border: solid 1px var(--secondary-color);
+  width: 25%;
+  padding: 35px 0;
+  transition: all 0.25s;
+}
+section.main-content table.specialties tr td:hover {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+
+section.section-booking {
+  background-image: url("images/banner3.png");
+  background-size: cover;
+  font-family: var(--font-workSan);
+  padding: 64px 0;
+  position: relative;
+}
+section.section-booking .empty {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.651);
+}
+section.main-content .container_appointment {
+  max-width: 992px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 94px;
+  background-color: transparent;
+}
+section.main-content .container_appointment form {
+  flex-basis: 50%;
+  background-color: var(--secondary-color);
+  z-index: 100;
+}
+section.main-content .container_appointment form input,
+select {
+  width: 49.2%;
+  border: none;
+  border-bottom: 1px solid var(--third-color);
+  border-right: 0.5px solid var(--third-color);
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  padding: 16px 20px;
+  outline: none;
+}
+section.main-content .container_appointment form button {
+  width: 100%;
+  padding: 16px;
+  color: var(--secondary-color);
+  background-color: var(--third-color);
+  font-weight: 700;
+  margin-top: -5px;
+  border: 1px solid var(--third-color);
+}
+section.main-content .container_appointment form textarea {
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  padding: 16px 20px;
+}
+section.main-content .container_appointment .descript {
+  flex-basis: calc(50% - 94px);
+  z-index: 100;
+}
+section.main-content .container_appointment .descript h2 {
+  color: var(--primary-color);
+  font-size: 32px;
+  font-family: var(--font-yevOne);
+}
+
+.carts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carts .cart-info {
+  font-family: var(--font-workSan);
+  text-align: center;
+  color: var(--secondary-color);
+  background-color: var(--third-color);
+  padding: 24px 0;
+  margin-top: -4px;
+}
+.carts .cart-info p {
+  font-size: 18px;
+  margin: 0;
+}
+.carts .cart-info .media-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.carts .cart-info i {
+  display: inline-block;
+  font-size: 24px;
+}
+.cart-footer {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  text-align: center;
+  font-family: var(--font-workSan);
+  padding: 12px 0;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 64px;
+  column-gap: 10px;
+}
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.dot1 {
+  background-color: var(--third-color);
+}
+.dot2 {
+  background-color: var(--primary-color);
+}
+.dot3 {
+  background-color: var(--secondary-color);
+}
+
+.news {
+  padding: 0 187px;
+}
+.list-news {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 992px;
+  margin: auto;
+}
+.list-news > li {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  width: calc(50% - 10px);
+}
+.new-info > p:first-child {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.new-info > p {
+  text-align: left;
+  margin: 8px 0;
+}
+.view-like {
+  display: flex;
+  gap: 10px;
+}
+.view-like > p {
+  margin: 0;
+}
